@@ -19,6 +19,8 @@
 
 `npm start`
 # PrePP
+![preppLogo](https://user-images.githubusercontent.com/67973604/194168057-c3d3e61e-aa25-486b-ae90-de607c4037fe.gif)
+
 PrePP (Pre Party Planning) is a full-stack web application to help people to plan their parties and events easier and faster.
 Users can add dishes(or other things) with descriptions and ingredients/items needed.
 
