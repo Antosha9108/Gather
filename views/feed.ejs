@@ -1,0 +1,26 @@
+<%- include('partials/header') -%>
+<!-- display user name -->
+<div class="grid">
+ <img src="/imgs/prepp-small.png" alt="prepp logo" class="justify-self-center">
+</div>
+<!-- Showing username in the corner of the page and a link to the profile -->
+<a href="/profile" class=""><p class="pl-6"><strong></strong><%= user.userName %></p></a>
+  <div class="">
+    <div class="">
+      <ul class="feed">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6  mt-5 grid-item column">
+            <a href="/post/<%= posts[i]._id%>">
+              <p class="post-title"><%= posts[i].title %></p>
+              
+              <img class="card-img-top" src="<%= posts[i].image%>">
+              <div class=" flex flex-row">
+              <input type="checkbox" checked="checked" class="checkbox checkbox-secondary mr-5" /> <p class="post-title"><%= posts[i].caption %></p>
+              </div>
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>

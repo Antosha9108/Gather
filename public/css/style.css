@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400&display=swap');
+
+html {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+     /* background: rgb(12,0,36); */
+    /* background: linear-gradient(180deg, rgba(12,0,36,1) 0%, rgba(105,9,203,1) 48%, rgba(214,0,255,1) 100%); */
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    min-height: 100%;
+    justify-content: center;
+    display: flex;
+    color: rgb(219, 216, 216);
+    font-size: 1.5em;
+    
+    
+}
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+/* 
+#logo {
+    size: 100px;
+} */
+
+/* HEADER STYLES */
+
+
+.container{
+display: flex;
+justify-content: center;
+align-content: center;
+/* border: 1px solid green; */
+text-align: center;
+
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    /* border:  1px solid red; */
+}
+
+
+.class-center {
+    display: flex;
+
+}
+.text-center{
+    /* justify-content: center; */
+    text-align: center;
+    /* border: 1px solid blue; */
+}
+
+.username {
+    justify-content: flex-start;
+    /* border: 1px solid rgb(0, 251, 255); */
+    
+}
+.feed-list{
+    display: block
+}
+.col-6 {
+    /* border: 1px solid green; */
+    justify-content: center;
+    /* flex-basis: auto; */
+    /* border: 1px solid red; */
+}
+.mt-5 {
+    flex-basis: auto;
+    justify-content: center;
+    /* color: rgb(218, 216, 216); */
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.home-text{
+    display: flex;
+    justify-content: space-around;
+    align-content:space-between;
+}
+.logo {
+    margin-top: 10em;
+}
+#logo{
+    border-radius: 2em;
+}
+
+.prepp{
+
+}
+.signup{
+    justify-content: center;
+    align-content: center;
+    /* border: 1px solid green; */
+    margin-top: 20em;
+}
+
+
+.form-control{
+    border-radius: 0.5em;
+}
+.submit-button-container{
+    display: flex;
+}
+.submit-button{
+    /* border: 1px solid red; */
+    /* justify-content: center; */
+    /* align-content: center; */
+    margin-left: 7em;
+}
+.signup-form {
+    display: flex;
+}
+.form-control{
+    background-color: rgb(132, 67, 230);
+}
+
+
+
+/* PROFILE PAGE */
+
+.create-post {
+    /* border: 1px solid mediumseagreen; */
+    display:block ;
+}
+
+/* FEED */
+.feed {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2px;
+    margin: 0 16px 16px 16px;
+
+    /* border: 1px solid white; */
+}
+
+.column {
+    /* flex: 33.33%; */
+}
+
+  .grid-item {
+    /* border: 1px solid green; */
+    padding: 10px;
+    font-size: 20px;
+    width: 33.333%
+    /* word-wrap: break-word; */
+    box-sizing: border-box;
+    flex-basis:33.33%;
+    text-align: center;
+
+  }
+
+  /* styling images for post page */
+ .img-post{
+    max-width: 400px;
+    max-height: 400px;
+    min-width: 200px;
+    min-height: 200px;
+    height: 20vw;
+    object-fit: cover;
+    
+    border: 5px solid black;
+    border-radius: 15px;
+    
+  }
+
+  .img-post-container{
+    /* display: flex; */
+    /* border: 1px solid red; */
+  }
+
+  .card-img-top {
+    width: 100%;
+    min-width: 200px;
+    min-height: 200px;
+    height: 20vw;
+    object-fit: cover;
+    justify-content: center;
+    border: 5px solid black;
+    border-radius: 15px;
+    
+  }
+
+    /* POST */
+
+
+    .post-image{
+        border: 5px solid black;
+        border-radius: 15px;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .caption{
+        display: block;
+        /* border: 1px solid greenyellow; */
+    }
+
+    .post-buttons{
+        /* border: 1px solid red; */
+    }
+
+    .comment{
+        /* border: 3px solid white; */
+    }
