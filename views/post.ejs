@@ -15,19 +15,19 @@
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+          <button class="btn  fa fa-heart bg-blue-500 shadow-lg shadow-blue-500/50" type="submit"></button>
         </form>
         <!-- like counter -->
         <!-- <h3 class="col-3"><%= post.likes %></h3> -->
         <%if(post.user == user.id){ %>
 
-          <button><i class="btn btn-primary fa-solid fa-bookmark"></i></button>
+          <button><i class="btn  fa-solid fa-bookmark bg-blue-500 shadow-lg shadow-blue-500/50 ml-5 mr-5"></i></button>
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
           class="col-3"
         >
-          <button class="btn btn-primary fa-regular fa-trash-can" type="submit"></button>
+          <button class="btn  fa-regular fa-trash-can bg-blue-500 shadow-lg shadow-blue-500/50" type="submit"></button>
         </form>
         <%}%>
       </div>
@@ -38,7 +38,13 @@
       </div>
         <!-- caption -->
         <div class="col-3 mt-5 caption">
-          <p><%= post.caption %></p>
+          <!-- <p><%= post.caption %></p> -->
+          <ul class="list-group list-group block w-full bg-gray-900 rounded">
+            <% for(var i=0; i<post.caption.length; i++) {%>
+              <li class="">- <%= post.caption[i] %></li>
+            <% } %>
+          </ul>
+
         </div>
 
 
@@ -74,9 +80,9 @@
       <form action="/comment/createComment/<%= post.id %>"  method="POST">
         
             <label for="comment" class="form-label">Comment</label>
-            <input type="text" class="form-control" id="comment" name="comment">
+            <input type="text" class="form-control bg-gray-900" id="comment" name="comment">
         
-        <button type="submit" class="btn btn-primary" value='Submit'>Submit</button>
+        <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value='Submit'>Submit</button>
       </form>
       </div>
         <div>
@@ -105,11 +111,12 @@
 
 
 
-
-  <!-- return buttons -->
-  <div class="col-6 mt-5 return-buttons">
-    <a class="btn btn-primary" href="/profile">Return to Profile</a>
-    <a class="btn btn-primary" href="/feed">Return to Feed</a>
   </div>
-
+  <!-- return buttons -->
+  
+ 
+  <div class="col-6 mt-5 return-buttons flex justify-center">
+    <!-- <a class="btn btn-primary bg-blue-500 shadow-lg shadow-blue-500/50" href="/profile">Return to Profile</a> -->
+    <a class="btn bg-blue-500 shadow-lg shadow-blue-500/50" href="/feed">Return to Feed</a>
+  </div>
 <%- include('partials/footer') -%>

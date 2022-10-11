@@ -1,10 +1,10 @@
 <%- include('partials/header') -%>
 <!-- display user name -->
 <div class="grid">
- <img src="/imgs/prepp-small.png" alt="prepp logo" class="justify-self-center">
+ <img src="/imgs/prepp-small.png" alt="prepp logo" class="justify-self-center mt-5 rounded">
 </div>
 <!-- Showing username in the corner of the page and a link to the profile -->
-<a href="/profile" class=""><p class="pl-6"><strong></strong><%= user.userName %></p></a>
+<a href="/profile" class=""><p class="pl-6"><strong></strong><%= user.userName %> <br> Create a post</p></a>
   <div class="">
     <div class="">
       <ul class="feed">
@@ -15,7 +15,12 @@
               
               <img class="card-img-top" src="<%= posts[i].image%>">
               <div class=" flex flex-row">
-              <input type="checkbox" checked="checked" class="checkbox checkbox-secondary mr-5" /> <p class="post-title"><%= posts[i].caption %></p>
+                <!-- checkmark if needed -->
+                <!-- <input type="checkbox" checked="checked" class="checkbox checkbox-secondary mr-5" /> -->
+
+
+                <!-- display caption if needed -->
+               <!-- <p class="post-title"><%= posts[i].caption %></p> -->
               </div>
             </a>
           </li>

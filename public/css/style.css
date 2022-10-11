@@ -2,7 +2,6 @@
 
 html {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-     /* background: rgb(12,0,36); */
     /* background: linear-gradient(180deg, rgba(12,0,36,1) 0%, rgba(105,9,203,1) 48%, rgba(214,0,255,1) 100%); */
     /* background-repeat: no-repeat; */
     background-size: cover;
@@ -10,8 +9,9 @@ html {
     justify-content: center;
     display: flex;
     color: rgb(219, 216, 216);
-    font-size: 1.5em;
-    
+    font-size: 1.2em;
+        background: linear-gradient(180deg, rgba(12,0,36,1) 0%, rgb(20, 8, 32) 48%, rgb(60, 10, 70) 100%);
+
     
 }
 body {
@@ -99,20 +99,14 @@ text-align: center;
 .form-control{
     border-radius: 0.5em;
 }
-.submit-button-container{
-    display: flex;
-}
-.submit-button{
-    /* border: 1px solid red; */
-    /* justify-content: center; */
-    /* align-content: center; */
-    margin-left: 7em;
-}
+
+
 .signup-form {
     display: flex;
 }
 .form-control{
-    background-color: rgb(132, 67, 230);
+    /* background-color: rgb(155, 148, 164); */
+                        /* rgb(132, 67, 230); */
 }
 
 
@@ -205,3 +199,27 @@ text-align: center;
     .comment{
         /* border: 3px solid white; */
     }
+
+    li{
+    list-style-type: none;
+}
+
+
+/*! tailwind tags */
+
+/* blue button with glow bg-blue-500 shadow-lg shadow-blue-500/50 */
+
+
+footer {
+    /* border-top: solid 1px; */
+    background: rgba(22, 21, 21, 0.5);
+    width: 100%;
+    height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    size: 10px;
+  }

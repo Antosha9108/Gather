@@ -7,14 +7,14 @@ const PostSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    require: false,
+    required: false,
   },
   cloudinaryId: {
     type: String,
     require: true,
   },
   caption: {
-    type: String,
+    type: [String],
     required: true,
   },
   likes: {
@@ -28,6 +28,10 @@ const PostSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  completed: {
+    type: Boolean,
+    required: false,
   },
 });
 
