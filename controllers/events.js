@@ -6,7 +6,19 @@ const User = require("../models/User");
 
 // not sure if I need this again? it already exists in posts.js controller
 module.exports = {
-
+    // getProfile: async (req, res) => {
+    //     try {
+    //         //Since we have a session each request (req) contains logged-in users info: req.user
+    //         //grabbing just the events of the logged in user
+    //         const events = await Event.find({ user: req.user.id });
+    //         res.render("profile.ejs", { posts: posts, user: req.user });
+    //         //!Since we have a session each request (req) contains logged-in users info: req.user
+    //         //!grabbing just the posts of the logged in user
+    //         res.render("profile.ejs", { events: events, user: req.user });
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // },
     getEventFeed: async (req, res) => {
         try {
             const events = await Event.find().sort({ createdAt: "desc" }).lean();
