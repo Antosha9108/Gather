@@ -1,50 +1,97 @@
 <%- include('partials/header') -%>
-<div class="">
-  <div class="row mt-5">
+  <div class="">
+    <div class="row mt-5">
       <div class="col-6">
-          <div class="username">
-              <p><strong></strong> <%= user.userName %></p>
-              <!-- commented out email on the profile page -->
-              <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
-              <a href="/logout" class=" btn col-3  bg-blue-500 shadow-lg shadow-blue-500/50">Logout</a>
-          </div>
-          <div class="mt-5 create-post">
-            <h2 class="justify-content-center mb-3">Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label ">Title</label>
-                  <input type="text" class="form-control block w-full rounded-lg bg-gray-900" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea rows='6' class="form-control block w-full bg-gray-900" id="caption" name="caption" placeholder="Please add items on seperate lines"></textarea>
-              </div>
-              <div>
-                <label for="imgUpload" class="form-label ">Image</label>
-                <input type="file" class="form-control bg-gray-900" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value="Upload">Submit</button>
-            </form>
-          </div>
+        <div class="username">
+          <p>
+            <%= user.userName %>
+          </p>
+          <!-- commented out email on the profile page -->
+          <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
+          <a href="/logout" class=" btn col-3  bg-blue-500 shadow-lg shadow-blue-500/50">Logout</a>
+        </div>
+        <!-- Create a post -->
+        <div class="mt-5 create-post">
+          <h2 class="justify-content-center mb-3">Add a post</h2>
+          <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+            <div class="mb-3">
+              <label for="title" class="form-label ">Title</label>
+              <input type="text" class="form-control block w-full rounded-lg bg-gray-900" id="title" name="title">
+            </div>
+            <div class="mb-3">
+              <label for="caption" class="form-label">Caption</label>
+              <textarea rows='6' class="form-control block w-full bg-gray-900" id="caption" name="caption"
+                placeholder="Please add items on seperate lines"></textarea>
+            </div>
+            <div>
+              <label for="imgUpload" class="form-label">Image</label>
+              <input type="file" class="form-control block w-full bg-gray-900" id="imageUpload" name="file">
+            </div>
+            <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value="Upload">Submit</button>
+          </form>
+        </div>
+
+
+        <!-- create an event -->
+        <div class="mt-5 create-post">
+          <h2 class="justify-content-center mb-3">Add an event</h2>
+          <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
+            <div class="mb-3">
+              <label for="title" class="form-label ">Title</label>
+              <input type="text" class="form-control block w-full rounded-lg bg-gray-900" id="title" name="title">
+            </div>
+            <div class="mb-3">
+              <label for="caption" class="form-label">Caption</label>
+              <textarea rows='6' class="form-control block w-full bg-gray-900" id="caption" name="caption"
+                placeholder="Event description"></textarea>
+            </div>
+            <div>
+              <label for="imgUpload" class="form-label">Image</label>
+              <input type="file" class="form-control block w-full bg-gray-900" id="imageUpload" name="file">
+            </div>
+            <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value="Upload">Submit</button>
+          </form>
+        </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <!-- show posts in profile -->
       <!-- <div class="col-6 feed-content">
         <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid card-img-top" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
+          <% for(var i=0; i<posts.length; i++) {%>
+            <li class="col-6 justify-content-between mt-5">
+              <a href="/post/<%= posts[i]._id%>">
+                <img class="img-fluid card-img-top" src="<%= posts[i].image%>">
+              </a>
+            </li>
+            <% } %>
         </ul>
-        
+
       </div> -->
+
+
+
+
+
+
       <div class="row justify-content-center mt-5">
         <a class="btn  bg-blue-500 shadow-lg shadow-blue-500/50" href="/feed">Return to Feed</a>
-      </div>    
+      </div>
     </div>
   </div>
-</div>
-<%- include('partials/footer') -%>
+  </div>
+  <%- include('partials/footer') -%>

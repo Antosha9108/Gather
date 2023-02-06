@@ -1,22 +1,24 @@
-const mongoose = require("mongoose");
+// // ?? this is model and schema.On comment route.uncomment to add comments
 
-const CommentSchema = new mongoose.Schema({
-  Comment: {
-    type: String,
-    required: true,
-  },
-  likes: {
-    type: Number,
-    required: true,
-  },
-  post: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Post",
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+// const mongoose = require("mongoose");
 
-module.exports = mongoose.model("Comment", CommentSchema);
+// const CommentSchema = new mongoose.Schema({
+//   Comment: {
+//     type: String,
+//     required: true,
+//   },
+//   likes: {
+//     type: Number,
+//     required: true,
+//   },
+//   post: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: "Post",
+//   },
+//   createdAt: {
+//     type: Date,
+//     default: Date.now,
+//   },
+// });
+
+// module.exports = mongoose.model("Comment", CommentSchema);

@@ -1,122 +1,77 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <h2><%= post.title %></h2>
-      <div class="img-post-container flex justify-center">
-      <img class=" img-post" src="<%= post.image%>" />
-      </div>  
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-6">
+        <h2>
+          <%= post.title %>
+        </h2>
+        <div class="img-post-container flex justify-center">
+          <img class=" img-post" src="<%= post.image%>" />
+        </div>
 
 
-      <!-- post buttons -->
-      <div class="post-buttons flex flex-row justify-center">
-        <form
-          class=""
-          action="/post/likePost/<%= post.id %>?_method=PUT"
-          method="POST"
-        >
-          <button class="btn  fa fa-heart bg-blue-500 shadow-lg shadow-blue-500/50" type="submit"></button>
-        </form>
-        <!-- like counter -->
-        <!-- <h3 class="col-3"><%= post.likes %></h3> -->
-        <%if(post.user == user.id){ %>
+        <!-- post buttons -->
+        <div class="post-buttons flex flex-row justify-center">
+          <form class="" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+            <button class="btn  fa fa-heart bg-blue-500 shadow-lg shadow-blue-500/50" type="submit"></button>
+          </form>
+          <!-- like counter -->
+          <!-- <h3 class="col-3"><%= post.likes %></h3> -->
+          <%if(post.user==user.id){ %>
 
-          <button><i class="btn  fa-solid fa-bookmark bg-blue-500 shadow-lg shadow-blue-500/50 ml-5 mr-5"></i></button>
-        <form
-          action="/post/deletePost/<%= post.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn  fa-regular fa-trash-can bg-blue-500 shadow-lg shadow-blue-500/50" type="submit"></button>
-        </form>
-        <%}%>
-      </div>
+            <button><i
+                class="btn  fa-solid fa-bookmark bg-blue-500 shadow-lg shadow-blue-500/50 ml-5 mr-5"></i></button>
+            <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
+              <button class="btn  fa-regular fa-trash-can bg-blue-500 shadow-lg shadow-blue-500/50"
+                type="submit"></button>
+            </form>
+            <%}%>
+        </div>
 
-      <div class="like-counter">
-       <!-- like counter -->
-         <h3 class="col-3">Likes: <%= post.likes %></h3>
-      </div>
+        <div class="like-counter">
+          <!-- like counter -->
+          <h3 class="col-3">Likes: <%= post.likes %>
+          </h3>
+        </div>
         <!-- caption -->
         <div class="col-3 mt-5 caption">
           <!-- <p><%= post.caption %></p> -->
           <ul class="list-group list-group block w-full bg-gray-900 rounded">
             <% for(var i=0; i<post.caption.length; i++) {%>
-              <li class="">- <%= post.caption[i] %></li>
-            <% } %>
+              <li class="">- <%= post.caption[i] %>
+              </li>
+              <% } %>
           </ul>
 
         </div>
 
 
-      
-      
-       <!-- <% for(var i=0; i<comments.length; i++) {%> -->
-          <!-- <li class=" justify-content-between mt-5"> -->
-            <!-- <%=comments[i].Comment%> -->
-          <!-- </li> -->
-         
-           <!-- comment likes IDK WHY--> 
-          <div>
-        
-          <!-- <form
-              class="col-1"
-              action="/comment/likeComment/<%= comments[i]._id %>?_method=PUT"
-              method="POST"
-            >
-            <button class="btn btn-primary fa fa-heart" type="submit"></button>
-            </form>
-            <h3 class="col-3">Likes: <%= comments[i].likes %></h3>
-          </div> -->
-            <!-- <% } %> -->
-          </div>
 
-      <!-- comments -->
-     
+        <!-- comments -->
 
 
-      <!-- create a comment -->
-      <!-- <h2>Create a Comment</h2> -->
-      <div class="comment flex justify-center">
-      <form action="/comment/createComment/<%= post.id %>"  method="POST">
-        
+        <!-- ?? uncomment this to get comments displayed in the post -->
+        <!-- <div class="comment flex justify-center">
+          <form action="/comment/createComment/<%= post.id %>" method="POST">
+
             <label for="comment" class="form-label">Comment</label>
             <input type="text" class="form-control bg-gray-900" id="comment" name="comment">
-        
-        <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value='Submit'>Submit</button>
-      </form>
-      </div>
-        <div>
-          <% for(var i=0; i<comments.length; i++) {%>
-          <li class=" justify-content-between mt-5">
-            <%=comments[i].Comment%>
-          </li>
-         
-           <!-- comment likes IDK WHY--> 
-          
-        
-          <!-- <form
-              class="col-1"
-              action="/comment/likeComment/<%= comments[i]._id %>?_method=PUT"
-              method="POST"
-            >
-            <button class="btn btn-primary fa fa-heart" type="submit"></button>
-            </form>
-            <h3 class="col-3">Likes: <%= comments[i].likes %></h3>
-          </div> -->
-          <% } %>
+
+            <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value='Submit'>Submit</button>
+          </form>
         </div>
-  
+        
+        <!-- ??---------------------?? -->
+      </div>
+
+
+      <!-- return buttons -->
+
+      <div class="col-6 mt-5 return-buttons flex justify-center">
+        <!-- <a class="btn btn-primary bg-blue-500 shadow-lg shadow-blue-500/50" href="/profile">Return to Profile</a> -->
+        <a class="btn bg-blue-500 shadow-lg shadow-blue-500/50 flex justify-center" href="/feed">Return to Feed</a>
+      </div>
     </div>
-    
+    <!-- return buttons -->
 
-
-
-  </div>
-  <!-- return buttons -->
-  
- 
-  <div class="col-6 mt-5 return-buttons flex justify-center">
-    <!-- <a class="btn btn-primary bg-blue-500 shadow-lg shadow-blue-500/50" href="/profile">Return to Profile</a> -->
-    <a class="btn bg-blue-500 shadow-lg shadow-blue-500/50" href="/feed">Return to Feed</a>
-  </div>
-<%- include('partials/footer') -%>
+    <%- include('partials/footer') -%>

@@ -1,18 +1,26 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
+
+//?? this is a variable to add comments. comming from models/Comment
 const Comment = require("../models/Comment")
 const User = require("../models/User");
 
 module.exports = {
   getProfile: async (req, res) => {
+    console.log(req.user)
     try {
+      //Since we have a session each request (req) contains logged-in users info: req.user
+      // console.log(req.user) to see everything
+      //grabbing just the posts of the logged in user
       const posts = await Post.find({ user: req.user.id });
+
+      //sending posts data from mongodb and user data to ejs template
       res.render("profile.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
   },
-   getFeed: async (req, res) => {
+  getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
       var users = [];
@@ -36,9 +44,15 @@ module.exports = {
   // },
   getPost: async (req, res) => {
     try {
+      //id parameter comes from post routes
+      //router.get("/:id, ensureAuth, postsController.getPost");
+      //example url: http://localhost:2121/post/63dd8cb9a9ee09c2967fbe35
       const post = await Post.findById(req.params.id);
-      const comments = await Comment.find({post: req.params.id}).sort({ createdAt: "desc" }).lean();
-      res.render("post.ejs", { post: post, user: req.user, comments: comments});
+
+      //?? controller for comments
+      // const comments = await Comment.find({ post: req.params.id }).sort({ createdAt: "desc" }).lean();
+      // res.render("post.ejs", { post: post, user: req.user, comments: comments });
+      res.render("post.ejs", { post: post, user: req.user, });
     } catch (err) {
       console.log(err);
     }
@@ -57,7 +71,8 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Post has been added!");
-      res.redirect("/profile");
+      //! maybe redirect to the feed instead of a profile (done)
+      res.redirect("/feed");
     } catch (err) {
       console.log(err);
     }
@@ -85,9 +100,9 @@ module.exports = {
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/profile");
+      res.redirect("/feed");
     } catch (err) {
-      res.redirect("/profile");
+      res.redirect("/feed");
     }
   },
 };

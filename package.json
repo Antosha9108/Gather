@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "Prepp-100-hour-project",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "MVC portfolio project",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
