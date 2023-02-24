@@ -1,4 +1,4 @@
-// // ?? this is model and schema.On comment route.uncomment to add comments
+// //?? this is model and schema.On comment route.uncomment to add comments
 
 // const mongoose = require("mongoose");
 

@@ -2,7 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 
 //?? this is a variable to add comments. comming from models/Comment
-const Comment = require("../models/Comment")
+// const Comment = require("../models/Comment")
 const User = require("../models/User");
 
 module.exports = {
@@ -47,12 +47,13 @@ module.exports = {
       //id parameter comes from post routes
       //router.get("/:id, ensureAuth, postsController.getPost");
       //example url: http://localhost:2121/post/63dd8cb9a9ee09c2967fbe35
+      //id === 63dd8cb9a9ee09c2967fbe35
       const post = await Post.findById(req.params.id);
 
       //?? controller for comments
       // const comments = await Comment.find({ post: req.params.id }).sort({ createdAt: "desc" }).lean();
       // res.render("post.ejs", { post: post, user: req.user, comments: comments });
-      res.render("post.ejs", { post: post, user: req.user, });
+      res.render("post.ejs", { post: post, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -62,6 +63,7 @@ module.exports = {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 
+      //media is stored on cloudinary - the above request responds with url to media and the media id that you will need when deleting content
       await Post.create({
         title: req.body.title,
         image: result.secure_url,
@@ -97,7 +99,7 @@ module.exports = {
       let post = await Post.findById({ _id: req.params.id });
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(post.cloudinaryId);
-      // Delete post from db
+      // Delete post from DB
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
       res.redirect("/feed");

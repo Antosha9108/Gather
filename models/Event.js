@@ -25,4 +25,6 @@ const EventSchema = new mongoose.Schema({
 
 });
 
+//MongoDB Collection named here - will give lowercase plural of name 
+
 module.exports = mongoose.model("Event", EventSchema);
