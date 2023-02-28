@@ -32,4 +32,5 @@ Optimization:
 -Add bookmark Functionality.
 
 Whiteboard:
-https://excalidraw.com/#json=DaM5zhcAbISlCgPlETXup,y1pM3P1JNzjgRTbNh8rtbQ
+
+https://excalidraw.com/#json=IlUhiGA4vQPjym-ysEze3,EJX_TOOBuBPUYKNHLVDo_A
