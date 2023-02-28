@@ -3,25 +3,25 @@
     <div class="row justify-content-center mt-5">
       <div class="col-6">
         <h2>
-          <%= post.title %>
+          <%= item.title %>
         </h2>
         <div class="img-post-container flex justify-center">
-          <img class=" img-post" src="<%= post.image%>" />
+          <img class=" img-post" src="<%= item.image%>" />
         </div>
 
 
         <!-- post buttons -->
         <div class="post-buttons flex flex-row justify-center">
-          <form class="" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+          <form class="" action="/item/likeItem/<%= item.id %>?_method=PUT" method="POST">
             <button class="btn  fa fa-heart bg-blue-500 shadow-lg shadow-blue-500/50" type="submit"></button>
           </form>
           <!-- like counter -->
-          <!-- <h3 class="col-3"><%= post.likes %></h3> -->
-          <%if(post.user==user.id){ %>
+          <!-- <h3 class="col-3"><%= item.likes %></h3> -->
+          <%if(item.user==user.id){ %>
 
             <button><i
                 class="btn  fa-solid fa-bookmark bg-blue-500 shadow-lg shadow-blue-500/50 ml-5 mr-5"></i></button>
-            <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
+            <form action="/item/deleteItem/<%= item.id %>?_method=DELETE" method="POST" class="col-3">
               <button class="btn  fa-regular fa-trash-can bg-blue-500 shadow-lg shadow-blue-500/50"
                 type="submit"></button>
             </form>
@@ -30,15 +30,15 @@
 
         <div class="like-counter">
           <!-- like counter -->
-          <h3 class="col-3">Likes: <%= post.likes %>
+          <h3 class="col-3">Likes: <%= item.likes %>
           </h3>
         </div>
         <!-- caption -->
         <div class="col-3 mt-5 caption">
-          <!-- <p><%= post.caption %></p> -->
+          <!-- <p><%= item.description %></p> -->
           <ul class="list-group list-group block w-full bg-gray-900 rounded">
-            <% for(var i=0; i<post.caption.length; i++) {%>
-              <li class="">- <%= post.caption[i] %>
+            <% for(var i=0; i<item.description.length; i++) {%>
+              <li class="">- <%= item.description[i] %>
               </li>
               <% } %>
           </ul>
@@ -52,7 +52,7 @@
 
         <!-- ?? uncomment this to get comments displayed in the post -->
         <!-- <div class="comment flex justify-center">
-          <form action="/comment/createComment/<%= post.id %>" method="POST">
+          <form action="/comment/createComment/<%= item.id %>" method="POST">
 
             <label for="comment" class="form-label">Comment</label>
             <input type="text" class="form-control bg-gray-900" id="comment" name="comment">

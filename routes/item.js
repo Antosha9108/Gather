@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const upload = require("../middleware/multer");
-const postsController = require("../controllers/posts");
+const itemsController = require("../controllers/item");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
@@ -9,15 +9,15 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //post/:id, post/createPost, post/likePost/:id, post/deletePost/:id
 
 
-router.get("/:id", ensureAuth, postsController.getPost);
+router.get("/:id", ensureAuth, itemsController.getItem);
 
 //Enables user to create post w/ cloudinary for media uploads
-router.post("/createPost", upload.single("file"), postsController.createPost);
+router.post("/createItem", upload.single("file"), itemsController.createItem);
 
 //enables user to like post. In controller, uses POST model to update like by 1
-router.put("/likePost/:id", postsController.likePost);
+router.put("/likeItem/:id", itemsController.likeItem);
 
 //Enables user to delete post. In controller, uses POST model to delete post from MongoDB collection
-router.delete("/deletePost/:id", postsController.deletePost);
+router.delete("/deleteItem/:id", itemsController.deleteItem);
 
 module.exports = router;

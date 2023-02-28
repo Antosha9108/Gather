@@ -10,17 +10,19 @@
           <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
           <a href="/logout" class=" btn col-3  bg-blue-500 shadow-lg shadow-blue-500/50">Logout</a>
         </div>
+
+
         <!-- Create a post -->
         <div class="mt-5 create-post">
-          <h2 class="justify-content-center mb-3">Add a post</h2>
-          <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+          <h2 class="justify-content-center mb-3">Add an Item</h2>
+          <form action="/item/createItem" enctype="multipart/form-data" method="POST">
             <div class="mb-3">
               <label for="title" class="form-label ">Title</label>
               <input type="text" class="form-control block w-full rounded-lg bg-gray-900" id="title" name="title">
             </div>
             <div class="mb-3">
-              <label for="caption" class="form-label">Caption</label>
-              <textarea rows='6' class="form-control block w-full bg-gray-900" id="caption" name="caption"
+              <label for="description" class="form-label">Description</label>
+              <textarea rows='6' class="form-control block w-full bg-gray-900" id="description" name="description"
                 placeholder="Please add items on seperate lines"></textarea>
             </div>
             <div>
@@ -41,8 +43,8 @@
               <input type="text" class="form-control block w-full rounded-lg bg-gray-900" id="title" name="title">
             </div>
             <div class="mb-3">
-              <label for="caption" class="form-label">Caption</label>
-              <textarea rows='6' class="form-control block w-full bg-gray-900" id="caption" name="caption"
+              <label for="caption" class="form-label">Description</label>
+              <textarea rows='6' class="form-control block w-full bg-gray-900" id="description" name="description"
                 placeholder="Event description"></textarea>
             </div>
             <div>
@@ -72,10 +74,10 @@
       <!-- show posts in profile -->
       <!-- <div class="col-6 feed-content">
         <ul class="row list-unstyled">
-          <% for(var i=0; i<posts.length; i++) {%>
+          <% for(var i=0; i<items.length; i++) {%>
             <li class="col-6 justify-content-between mt-5">
-              <a href="/post/<%= posts[i]._id%>">
-                <img class="img-fluid card-img-top" src="<%= posts[i].image%>">
+              <a href="/post/<%= items[i]._id%>">
+                <img class="img-fluid card-img-top" src="<%= items[i].image%>">
               </a>
             </li>
             <% } %>

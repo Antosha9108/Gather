@@ -19,7 +19,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 //routes
 const mainRoutes = require("./routes/main");
-const postRoutes = require("./routes/posts");
+const itemRoutes = require("./routes/item");
 
 //!event route
 const eventRoutes = require("./routes/events")
@@ -73,14 +73,15 @@ app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
-app.use("/post", postRoutes);
+app.use("/item", itemRoutes);
+
+// !!!!!this is new events route!!!!!! THIS IS WHAT ACTUALLY KICKS OFF events Route
+app.use("/events", eventRoutes)
+
 
 //?? comment route
 // app.use("/comment", commentsRoutes)
 
-
-// !!!!!this is new events route!!!!!! THIS IS WHAT ACTUALLY KICKS OFF events Route
-app.use("/events", eventRoutes)
 
 //Server Running
 app.listen(process.env.PORT, () => {
