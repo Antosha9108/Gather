@@ -36,7 +36,7 @@ module.exports = {
     getEvent: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
-
+            // const items = await Item.find({ user: req.user.id });
 
             res.render("event.ejs", { event: event, user: req.user, });
         } catch (err) {
@@ -53,13 +53,14 @@ module.exports = {
                 image: result.secure_url,
                 cloudinaryId: result.public_id,
                 //!!doublecheck if this is needed
+                description: req.body.description,
                 // caption: req.body.caption.trim().split("\r\n"),
 
                 user: req.user.id,
             });
             console.log("Event has been created!");
             //! maybe redirect to eventFeed or to the created event
-            res.redirect("/profile");
+            res.redirect("/eventFeed");
         } catch (err) {
             console.log(err);
         }

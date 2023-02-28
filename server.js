@@ -20,9 +20,8 @@ const connectDB = require("./config/database");
 //routes
 const mainRoutes = require("./routes/main");
 const itemRoutes = require("./routes/item");
-
 //!event route
-const eventRoutes = require("./routes/events")
+const eventRoutes = require("./routes/event")
 
 //?? comment route
 // const commentsRoutes = require("./routes/comment")
@@ -74,9 +73,8 @@ app.use(flash());
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
 app.use("/item", itemRoutes);
-
 // !!!!!this is new events route!!!!!! THIS IS WHAT ACTUALLY KICKS OFF events Route
-app.use("/events", eventRoutes)
+app.use("/event", eventRoutes)
 
 
 //?? comment route
