@@ -25,11 +25,12 @@ PrePP (Pre Party Planning) is a full-stack web application to help people to pla
 Users can add dishes(or other things) with descriptions and ingredients/items needed.
 
  # Optimization:
-- add links/ and buttons to reroute to different feeds and profile.
-- add vatar pictures to views and user model.
-- add nav bar to the header partial
+- Add links/ and buttons to reroute to different feeds and profile.
+- Add my events, my items and my favorites to the profile.
+- Add vatar pictures to views and user model.
+- Add nav bar to the header partial.
 - Add bookmark/favorites Functionality.
-- Add delete button to events
+- Add delete button to events.
 
 Whiteboard:
 
