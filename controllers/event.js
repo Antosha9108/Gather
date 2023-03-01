@@ -1,6 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");
 const Event = require("../models/Event");
-
+const Item = require('../models/Item')
 
 const User = require("../models/User");
 
@@ -36,9 +36,9 @@ module.exports = {
     getEvent: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
-            // const items = await Item.find({ user: req.user.id });
+            const items = await Item.find({ event: req.params.id });
 
-            res.render("event.ejs", { event: event, user: req.user, });
+            res.render("event.ejs", { event: event, items: items, user: req.user, });
         } catch (err) {
             console.log(err);
         }

@@ -72,10 +72,15 @@ module.exports = {
         description: req.body.description.trim().split("\r\n"),
         likes: 0,
         user: req.user.id,
+        event: req.body.eventId,
       });
-      console.log("Item has been added!");
-      //! maybe redirect to the feed instead of a profile
-      res.redirect("/feed");
+      console.log("item has been added!");
+      res.redirect(`/event/${req.body.eventId}`);
+
+
+
+
+
     } catch (err) {
       console.log(err);
     }
