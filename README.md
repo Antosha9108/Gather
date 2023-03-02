@@ -27,12 +27,16 @@ Users can add dishes(or other things) with descriptions and ingredients/items ne
  # Optimization:
 - [ ] Add links/ and buttons to reroute to different feeds and profile.
 - [x] Add my events and my items to the profile.
+- [x] Add nav bar.
 - [ ] Add avatar pictures to views and user model.
-- [ ] Add nav bar to the header partial.
+- [ ] Add avatar picture to nav bar.
 - [ ] Add bookmark/favorites Functionality.
 - [ ] Add my favorites tab to the profile/nav bar.
 - [x] Add delete button to events.
 - [ ] Add dates to the events(model,view,controller), implement calendar and see if can add to google calendars.
+- [ ] Add floating button with form to add event or item.
+- [ ] Add Responsive CSS.
+- [ ] Fix the footer.
 # Whiteboard:
 
 https://excalidraw.com/#json=IlUhiGA4vQPjym-ysEze3,EJX_TOOBuBPUYKNHLVDo_A
