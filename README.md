@@ -26,7 +26,7 @@ Users can add dishes(or other things) with descriptions and ingredients/items ne
 
  # Optimization:
 - [ ] Add links/ and buttons to reroute to different feeds and profile.
-- [ ] Add my events and my items to the profile.
+- [x] Add my events and my items to the profile.
 - [ ] Add avatar pictures to views and user model.
 - [ ] Add nav bar to the header partial.
 - [ ] Add bookmark/favorites Functionality.
