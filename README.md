@@ -29,7 +29,7 @@ Users can add dishes(or other things) with descriptions and ingredients/items ne
 - Add my events, my items and my favorites to the profile.
 - Add avatar pictures to views and user model.
 - Add nav bar to the header partial.
-- Add bookmark/favorites Functionality.
+- Add bookmark/favorites Functionality and my favorites tab to the profile/nav bar.
 - Add delete button to events.
 - Add dates to the events(model,view,controller), implement calendar and see if can add to google calendars.
 Whiteboard:
