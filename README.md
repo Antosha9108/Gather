@@ -37,6 +37,7 @@ Users can add dishes(or other things) with descriptions and ingredients/items ne
 - [ ] Add floating button with form to add event or item.
 - [ ] Add Responsive CSS.
 - [ ] Fix the footer.
+- [ ] Fix the supported files in Schemas.
 # Whiteboard:
 
 https://excalidraw.com/#json=IlUhiGA4vQPjym-ysEze3,EJX_TOOBuBPUYKNHLVDo_A
