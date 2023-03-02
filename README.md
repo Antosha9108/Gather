@@ -25,13 +25,14 @@ PrePP (Pre Party Planning) is a full-stack web application to help people to pla
 Users can add dishes(or other things) with descriptions and ingredients/items needed.
 
  # Optimization:
-- Add links/ and buttons to reroute to different feeds and profile.
-- Add my events, my items and my favorites to the profile.
+- [ ] Add links/ and buttons to reroute to different feeds and profile.
+- [ ] Add my events and my items to the profile.
 - [ ] Add avatar pictures to views and user model.
-- Add nav bar to the header partial.
-- Add bookmark/favorites Functionality and my favorites tab to the profile/nav bar.
+- [ ] Add nav bar to the header partial.
+- [ ] Add bookmark/favorites Functionality.
+- [ ] Add my favorites tab to the profile/nav bar.
 - [x] Add delete button to events.
-- Add dates to the events(model,view,controller), implement calendar and see if can add to google calendars.
+- [ ] Add dates to the events(model,view,controller), implement calendar and see if can add to google calendars.
 # Whiteboard:
 
 https://excalidraw.com/#json=IlUhiGA4vQPjym-ysEze3,EJX_TOOBuBPUYKNHLVDo_A
