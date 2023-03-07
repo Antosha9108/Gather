@@ -22,7 +22,6 @@ const mainRoutes = require("./routes/main");
 const itemRoutes = require("./routes/item");
 //!event route
 const eventRoutes = require("./routes/event")
-
 //?? comment route
 // const commentsRoutes = require("./routes/comment")
 
@@ -71,11 +70,10 @@ app.use(passport.session());
 app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
+//!! THIS IS WHAT ACTUALLY KICKS OFF Routes
 app.use("/", mainRoutes);
 app.use("/item", itemRoutes);
-// !!!!!this is new events route!!!!!! THIS IS WHAT ACTUALLY KICKS OFF events Route
 app.use("/event", eventRoutes)
-
 
 //?? comment route
 // app.use("/comment", commentsRoutes)

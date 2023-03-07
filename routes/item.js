@@ -4,20 +4,20 @@ const upload = require("../middleware/multer");
 const itemsController = require("../controllers/item");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Post Routes - simplified for now
+//Item Routes - simplified for now
 //Since linked from server js treat each path as:
-//post/:id, post/createPost, post/likePost/:id, post/deletePost/:id
+//item/:id, item/createItem, item/likeItem/:id, item/deleteItem/:id
 
 
 router.get("/:id", ensureAuth, itemsController.getItem);
 
-//Enables user to create post w/ cloudinary for media uploads
+//Enables user to create item w/ cloudinary for media uploads
 router.post("/createItem", upload.single("file"), itemsController.createItem);
 
-//enables user to like post. In controller, uses POST model to update like by 1
+//enables user to like item. In controller, uses POST model to update like by 1
 router.put("/likeItem/:id", itemsController.likeItem);
 
-//Enables user to delete post. In controller, uses POST model to delete post from MongoDB collection
+//Enables user to delete item. In controller, uses POST model to delete item from MongoDB collection
 router.delete("/deleteItem/:id", itemsController.deleteItem);
 
 module.exports = router;

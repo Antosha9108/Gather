@@ -4,21 +4,9 @@ const Item = require('../models/Item')
 
 const User = require("../models/User");
 
-// not sure if I need this again? it already exists in posts.js controller
+
+
 module.exports = {
-    // getProfile: async (req, res) => {
-    //     try {
-    //         //Since we have a session each request (req) contains logged-in users info: req.user
-    //         //grabbing just the events of the logged in user
-    //         const events = await Event.find({ user: req.user.id });
-    //         res.render("profile.ejs", { posts: posts, user: req.user });
-    //         //!Since we have a session each request (req) contains logged-in users info: req.user
-    //         //!grabbing just the posts of the logged in user
-    //         res.render("profile.ejs", { events: events, user: req.user });
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // },
     getEventFeed: async (req, res) => {
         try {
             const events = await Event.find().sort({ createdAt: "desc" }).lean();
@@ -32,7 +20,6 @@ module.exports = {
             console.log(err);
         }
     },
-
     getEvent: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
@@ -52,14 +39,12 @@ module.exports = {
                 title: req.body.title,
                 image: result.secure_url,
                 cloudinaryId: result.public_id,
-                //!!doublecheck if this is needed
                 description: req.body.description,
                 // caption: req.body.caption.trim().split("\r\n"),
 
                 user: req.user.id,
             });
             console.log("Event has been created!");
-            //! maybe redirect to eventFeed or to the created event
             res.redirect("/eventFeed");
         } catch (err) {
             console.log(err);

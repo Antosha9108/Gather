@@ -1,99 +1,84 @@
 <%- include('partials/header') -%>
-  <div class="">
-    <div class="row mt-5">
-      <div class="col-6">
+  <%- include('partials/navBar') -%>
+    <div class="">
+      <div class="">
         <div class="username">
           <p>
             <%= user.userName %>
           </p>
           <!-- commented out email on the profile page -->
           <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
-          <a href="/logout" class=" btn col-3  bg-blue-500 shadow-lg shadow-blue-500/50">Logout</a>
+          <!-- <a href="/logout" class=" btn col-3  bg-blue-500 shadow-lg shadow-blue-500/50">Logout</a> -->
         </div>
-
-
-        <!-- Create a post -->
-        <div class="mt-5 create-post">
-          <h2 class="justify-content-center mb-3">Add an Item</h2>
-          <form action="/item/createItem" enctype="multipart/form-data" method="POST">
-            <div class="mb-3">
-              <label for="title" class="form-label ">Title</label>
-              <input type="text" class="form-control block w-full rounded-lg bg-gray-900" id="title" name="title">
-            </div>
-            <div class="mb-3">
-              <label for="description" class="form-label">Description</label>
-              <textarea rows='6' class="form-control block w-full bg-gray-900" id="description" name="description"
-                placeholder="Please add items on seperate lines"></textarea>
-            </div>
-            <div>
-              <label for="imgUpload" class="form-label">Image</label>
-              <input type="file" class="form-control block w-full bg-gray-900" id="imageUpload" name="file">
-            </div>
-            <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value="Upload">Submit</button>
-          </form>
-        </div>
-
 
         <!-- create an event -->
-        <div class="mt-5 create-post">
-          <h2 class="justify-content-center mb-3">Add an event</h2>
+        <h2 class="flex justify-center">Add an event</h2>
+        <div class="mt-5 flex justify-center">
+
           <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
-            <div class="mb-3">
-              <label for="title" class="form-label ">Title</label>
-              <input type="text" class="form-control block w-full rounded-lg bg-gray-900" id="title" name="title">
+            <div class="mb-3 flex flex-col">
+              <label for="title" class=" ">Title</label>
+              <input type="text" class=" w-80 rounded-lg bg-gray-900" id="title" name="title">
             </div>
             <div class="mb-3">
-              <label for="caption" class="form-label">Description</label>
-              <textarea rows='6' class="form-control block w-full bg-gray-900" id="description" name="description"
+              <label for="caption" class="">Description</label>
+              <textarea rows='6' class=" block w-80 bg-gray-900" id="description" name="description"
                 placeholder="Event description"></textarea>
             </div>
             <div>
-              <label for="imgUpload" class="form-label">Image</label>
-              <input type="file" class="form-control block w-full bg-gray-900" id="imageUpload" name="file">
+              <label for="imgUpload" class="">Image</label>
+              <input type="file" class=" w-80 block bg-gray-900" id="imageUpload" name="file">
             </div>
-            <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value="Upload">Submit</button>
+            <div class="flex justify-center">
+              <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value="Upload">Submit</button>
+            </div>
           </form>
         </div>
       </div>
 
 
+      <!-- show my events in profile -->
+      <div class="">
+        <p class=" flex justify-center mt-10">MY EVENTS</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- show posts in profile -->
-      <!-- <div class="col-6 feed-content">
-        <ul class="row list-unstyled">
-          <% for(var i=0; i<items.length; i++) {%>
-            <li class="col-6 justify-content-between mt-5">
-              <a href="/post/<%= items[i]._id%>">
-                <img class="img-fluid card-img-top" src="<%= items[i].image%>">
+        <ul class="m-8 p-3 grid lg:grid-cols-3 gap-10">
+          <% for(var i=0; i<events.length; i++) {%>
+            <li class="">
+              <a href="/event/<%= events[i]._id%>">
+                <img class="img-fluid card-img-top" src="<%= events[i].image%>">
+                <p class="pt-2 hover:text-gray-200">
+                  <%= events[i].title %>
+                </p>
               </a>
             </li>
             <% } %>
         </ul>
+      </div>
 
-      </div> -->
+      <!-- show my items in profile -->
+      <div class="">
+        <p class="mt-10 flex justify-center">MY ITEMS</p>
+        <div class="col-6 feed-content">
+          <ul class="m-8 p-3 grid lg:grid-cols-3 gap-10">
+            <% for(var i=0; i<items.length; i++) {%>
+              <li class="">
+                <a href="/item/<%= items[i]._id%>">
+                  <img class=" card-img-top" src="<%= items[i].image%>">
+                  <p class="pt-2 hover:text-gray-200">
+                    <%= items[i].title %>
+                  </p>
+                </a>
+              </li>
+              <% } %>
+          </ul>
+        </div>
+      </div>
 
 
-
-
-
-
-      <div class="row justify-content-center mt-5">
-        <a class="btn  bg-blue-500 shadow-lg shadow-blue-500/50" href="/feed">Return to Feed</a>
+      <div class=" flex justify-center">
+        <a class=" btn bg-blue-500 shadow-lg shadow-blue-500/50 m-5" href="/eventFeed">Return
+          to
+          Feed</a>
       </div>
     </div>
-  </div>
-  </div>
-  <%- include('partials/footer') -%>
+    <%- include('partials/footer') -%>

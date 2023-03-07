@@ -1,67 +1,89 @@
 <%- include('partials/header') -%>
-    <!-- display user name -->
-    <div class="grid">
-        <img src="/imgs/prepp-small.png" alt="prepp logo" class="justify-self-center mt-5 rounded">
-    </div>
-    <!-- Showing username in the corner of the page and a link to the profile -->
-    <a href="/profile" class="">
-        <p class="pl-6"><strong></strong>
-            <%= user.userName %> <br> Create an Item
-        </p>
-    </a>
-    <div class="">
+    <%- include('partials/navBar') -%>
+
+        <!-- event description -->
+        <h2 class="flex justify-center m-5">
+            <%= event.title %>
+        </h2>
+        <div class="flex justify-center">
+            <img class="rounded-lg w-80 h-80 card-img-top" src="<%= event.image%>" />
+
+
+
+
+
+
+        </div>
+
+
+        <!-- event buttons -->
+        <div class="flex justify-center">
+            <%if(event.user==user.id){ %>
+
+                <button><i class="btn  fa-solid fa-bookmark bg-blue-500 shadow-lg shadow-blue-500/50 m-5"></i></button>
+                <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST" class="col-3">
+                    <button class="btn  fa-regular fa-trash-can bg-blue-500 shadow-lg shadow-blue-500/50 m-5"
+                        type="submit"></button>
+                </form>
+                <%}%>
+        </div>
+
+
+        <!-- Display event items -->
+
         <div class="">
-            <ul class="feed">
-                <% for(var i=0; i<items.length; i++) {%>
-                    <li class="col-6  mt-5 grid-item column">
-                        // this is what tripped me over. /item/ was post and
-                        <a href="/item/<%= items[i]._id%>">
-                            <p class="post-title">
-                                <%= items[i].title %>
-                            </p>
+            <div class="">
+                <ul class="m-8 p-3 grid lg:grid-cols-3 gap-10">
+                    <% for(var i=0; i<items.length; i++) {%>
+                        <li class="">
+                            <a href="/item/<%= items[i]._id%>">
+                                <img class="card-img-top" src="<%= items[i].image%>">
+                                <p class="pt-2 hover:text-gray-200">
+                                    <%= items[i].title %>
+                                </p>
+                                <div class=" flex flex-row">
+                                    <!-- item description if needed -->
+                                    <!-- <p class="post-title"><%= items[i].description %></p> -->
+                                </div>
+                            </a>
+                        </li>
+                        <% } %>
+                </ul>
+            </div>
 
-                            <img class="card-img-top" src="<%= items[i].image%>">
-                            <div class=" flex flex-row">
-                                <!-- checkmark if needed -->
-                                <!-- <input type="checkbox" checked="checked" class="checkbox checkbox-secondary mr-5" /> -->
+
+            <!-- Create an item -->
+            <h2 class="flex justify-center">Add an Item</h2>
+            <div class="mt-5 flex justify-center">
+                <form action="/item/createItem" enctype="multipart/form-data" method="POST">
+                    <div class="mb-3 flex flex-col">
+                        <label for="title" class=" ">Title</label>
+                        <input type="text" class="w-80 rounded bg-gray-900" id="title" name="title">
 
 
-                                <!-- display caption if needed -->
-                                <!-- <p class="post-title"><%= items[i].description %></p> -->
-                            </div>
-                        </a>
-                    </li>
-                    <% } %>
-            </ul>
+                        <input type="hidden" id="eventId" name='eventId' value="<%=event._id%>">
+                    </div>
+                    <div class="mb-3 flex flex-col">
+                        <label for="description" class="">Description</label>
+                        <textarea rows='6' class="w-80 rounded bg-gray-900" id="description" name="description"
+                            placeholder="Please add items on seperate lines"></textarea>
+                    </div>
+                    <div class="mb-3 flex flex-col">
+                        <label for="imgUpload" class="">Image</label>
+                        <input type="file" class="w-80 rounded bg-gray-900" id="imageUpload" name="file">
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class=" flex justify-center mt-5 btn bg-blue-500 shadow-lg shadow-blue-500/50"
+                            value="Upload">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="flex justify-center mt-5">
+                <a class="btn  bg-blue-500 shadow-lg shadow-blue-500/50" href="/eventFeed">Return to
+                    Feed</a>
+            </div>
         </div>
 
-
-        <!-- Create an item -->
-        <div class="mt-5 create-post">
-            <h2 class="justify-content-center mb-3">Add an Item</h2>
-            <form action="/item/createItem" enctype="multipart/form-data" method="POST">
-                <div class="mb-3">
-                    <label for="title" class="form-label ">Title</label>
-                    <input type="text" class="form-control block w-full rounded-lg bg-gray-900" id="title" name="title">
-
-
-                    <input type="hidden" id="eventId" name='eventId' value="<%=event._id%>">
-                </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea rows='6' class="form-control block w-full bg-gray-900" id="description" name="description"
-                        placeholder="Please add items on seperate lines"></textarea>
-                </div>
-                <div>
-                    <label for="imgUpload" class="form-label">Image</label>
-                    <input type="file" class="form-control block w-full bg-gray-900" id="imageUpload" name="file">
-                </div>
-                <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50"
-                    value="Upload">Submit</button>
-            </form>
-        </div>
-    </div>
-
-
-    </div>
-    <%- include('partials/footer') -%>
+        <%- include('partials/footer') -%>

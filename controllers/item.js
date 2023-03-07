@@ -1,7 +1,8 @@
 const cloudinary = require("../middleware/cloudinary");
 const Item = require("../models/Item");
+const Event = require("../models/Event");
 
-//?? this is a variable to add comments. comming from models/Comment
+//?? this is a variable to add comments. coming from models/Comment
 // const Comment = require("../models/Comment")
 const User = require("../models/User");
 
@@ -11,11 +12,13 @@ module.exports = {
     try {
       //Since we have a session each request (req) contains logged-in users info: req.user
       // console.log(req.user) to see everything
-      //grabbing just the posts of the logged in user
+      //grabbing just the items of the logged in user
       const items = await Item.find({ user: req.user.id });
+      const events = await Event.find({ user: req.user.id });
 
-      //sending posts data from mongodb and user data to ejs template
-      res.render("profile.ejs", { items: items, user: req.user });
+
+      //sending items data from mongodb and user data to ejs template
+      res.render("profile.ejs", { items: items, events: events, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -49,11 +52,12 @@ module.exports = {
       //example url: http://localhost:2121/post/63dd8cb9a9ee09c2967fbe35
       //id === 63dd8cb9a9ee09c2967fbe35
       const item = await Item.findById(req.params.id);
+      const event = await Event.findById(req.params.id);
 
       //?? controller for comments
       // const comments = await Comment.find({ post: req.params.id }).sort({ createdAt: "desc" }).lean();
       // res.render("post.ejs", { post: post, user: req.user, comments: comments });
-      res.render("item.ejs", { item: item, user: req.user });
+      res.render("item.ejs", { item: item, event: event, user: req.user });
     } catch (err) {
       console.log(err);
     }

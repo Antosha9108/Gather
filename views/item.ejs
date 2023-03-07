@@ -1,57 +1,57 @@
 <%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <div class="col-6">
-        <h2>
-          <%= item.title %>
-        </h2>
-        <div class="img-post-container flex justify-center">
-          <img class=" img-post" src="<%= item.image%>" />
-        </div>
+  <%- include('partials/navBar') -%>
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-6">
+          <h2>
+            <%= item.title %>
+          </h2>
+          <div class=" flex justify-center">
+            <img class="rounded-lg w-80 h-80 card-img-top" src="<%= item.image%>" />
+          </div>
 
 
-        <!-- post buttons -->
-        <div class="post-buttons flex flex-row justify-center">
-          <form class="" action="/item/likeItem/<%= item.id %>?_method=PUT" method="POST">
-            <button class="btn  fa fa-heart bg-blue-500 shadow-lg shadow-blue-500/50" type="submit"></button>
-          </form>
-          <!-- like counter -->
-          <!-- <h3 class="col-3"><%= item.likes %></h3> -->
-          <%if(item.user==user.id){ %>
-
-            <button><i
-                class="btn  fa-solid fa-bookmark bg-blue-500 shadow-lg shadow-blue-500/50 ml-5 mr-5"></i></button>
-            <form action="/item/deleteItem/<%= item.id %>?_method=DELETE" method="POST" class="col-3">
-              <button class="btn  fa-regular fa-trash-can bg-blue-500 shadow-lg shadow-blue-500/50"
-                type="submit"></button>
+          <!-- item buttons -->
+          <div class="flex justify-center">
+            <form class="" action="/item/likeItem/<%= item.id %>?_method=PUT" method="POST">
+              <button class="btn  fa fa-heart bg-blue-500 shadow-lg shadow-blue-500/50 m-5" type="submit"></button>
             </form>
-            <%}%>
-        </div>
 
-        <div class="like-counter">
-          <!-- like counter -->
-          <h3 class="col-3">Likes: <%= item.likes %>
-          </h3>
-        </div>
-        <!-- caption -->
-        <div class="col-3 mt-5 caption">
-          <!-- <p><%= item.description %></p> -->
-          <ul class="list-group list-group block w-full bg-gray-900 rounded">
-            <% for(var i=0; i<item.description.length; i++) {%>
-              <li class="">- <%= item.description[i] %>
-              </li>
-              <% } %>
-          </ul>
+            <%if(item.user==user.id){ %>
 
-        </div>
+              <button><i class="btn  fa-solid fa-bookmark bg-blue-500 shadow-lg shadow-blue-500/50 m-5"></i></button>
+              <form action="/item/deleteItem/<%= item.id %>?_method=DELETE" method="POST" class="col-3">
+                <button class="btn  fa-regular fa-trash-can bg-blue-500 shadow-lg shadow-blue-500/50 m-5"
+                  type="submit"></button>
+              </form>
+              <%}%>
+          </div>
+
+          <div class="like-counter">
+            <!-- like counter -->
+            <h3 class="col-3">Likes: <%= item.likes %>
+            </h3>
+          </div>
+          <!-- caption -->
+          <div class="col-3 mt-5 caption">
+            <!-- <p><%= item.description %></p> -->
+            <ul class="list-group list-group block w-full bg-gray-900 rounded ">
+              <% for(var i=0; i<item.description.length; i++) {%>
+                <li class="">
+                  <%= item.description[i] %>
+                </li>
+                <% } %>
+            </ul>
+
+          </div>
 
 
 
-        <!-- comments -->
+          <!-- comments -->
 
 
-        <!-- ?? uncomment this to get comments displayed in the post -->
-        <!-- <div class="comment flex justify-center">
+          <!-- ?? uncomment this to get comments displayed in the item -->
+          <!-- <div class="comment flex justify-center">
           <form action="/comment/createComment/<%= item.id %>" method="POST">
 
             <label for="comment" class="form-label">Comment</label>
@@ -62,16 +62,17 @@
         </div>
         
         <!-- ??---------------------?? -->
+        </div>
+
+
+        <!-- return buttons -->
+
+        <div class="col-6 mt-5 return-buttons flex justify-center">
+          <!-- <a class="btn btn-primary bg-blue-500 shadow-lg shadow-blue-500/50" href="/profile">Return to Profile</a> -->
+          <a class="btn bg-blue-500 shadow-lg shadow-blue-500/50 flex justify-center" href="/eventFeed">
+            Return to Feed</a>
+        </div>
       </div>
-
-
       <!-- return buttons -->
 
-      <div class="col-6 mt-5 return-buttons flex justify-center">
-        <!-- <a class="btn btn-primary bg-blue-500 shadow-lg shadow-blue-500/50" href="/profile">Return to Profile</a> -->
-        <a class="btn bg-blue-500 shadow-lg shadow-blue-500/50 flex justify-center" href="/feed">Return to Feed</a>
-      </div>
-    </div>
-    <!-- return buttons -->
-
-    <%- include('partials/footer') -%>
+      <%- include('partials/footer') -%>

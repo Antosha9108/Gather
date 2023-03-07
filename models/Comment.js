@@ -11,9 +11,9 @@
 //     type: Number,
 //     required: true,
 //   },
-//   post: {
+//   item: {
 //     type: mongoose.Schema.Types.ObjectId,
-//     ref: "Post",
+//     ref: "Item",
 //   },
 //   createdAt: {
 //     type: Date,

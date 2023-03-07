@@ -1,50 +1,35 @@
 <%- include('partials/header') -%>
-    <!-- display user name -->
-    <div class="grid">
-        <img src="/imgs/prepp-small.png" alt="prepp logo" class="justify-self-center mt-5 rounded">
-    </div>
-    <a href="/profile" class="">
-        <p class="pl-6"><strong></strong>
-            <%= user.userName %> <br> Create an Event
-        </p>
-    </a>
-    <div>
-        <p>This is an event feed</p>
-    </div>
+    <%- include('partials/navBar') -%>
 
-    <div>
-        <ul>
-            <li>event will go here</li>
-        </ul>
-    </div>
+        <!-- <a href="/profile" class="username">
+            <p class="pl-6">
+                <%= user.userName %> <br> Add an event
+            </p>
+        </a> -->
+        <div>
+        </div>
 
-    <!-- !test run for eventFeed -->
-    <div class="">
         <div class="">
-            <ul class="feed">
+            <ul class="m-8 p-3 grid lg:grid-cols-3 gap-10">
                 <% for(var i=0; i<events.length; i++) {%>
-                    <li class="col-6  mt-5 grid-item column">
+                    <li class="">
                         <a href="/event/<%= events[i]._id%>">
-                            <p class="post-title">
+                            <!-- event image -->
+                            <img class="card-img-top" src="<%= events[i].image%>">
+                            <!--event title  -->
+                            <p class="pt-2 hover:text-gray-200">
                                 <%= events[i].title %>
                             </p>
 
-                            <img class="card-img-top" src="<%= events[i].image%>">
                         </a>
                     </li>
                     <% } %>
             </ul>
         </div>
-    </div>
 
 
 
 
 
 
-
-
-
-
-
-    <%- include('partials/footer') -%>
+        <%- include('partials/footer') -%>
