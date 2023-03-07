@@ -3,11 +3,12 @@
 
     <div class="">
       <div class="">
-        <ul class="m-8 p-3 grid lg:grid-cols-3 gap-10">
+        <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10">
           <% for(var i=0; i<items.length; i++) {%>
             <li class="">
               <a href="/item/<%= items[i]._id%>">
-                <img class="card-img-top" src="<%= items[i].image%>">
+                <img class="card-img-top hover:scale-105 hover:bg-opacity-50 transition ease-out duration-300"
+                  src="<%= items[i].image%>">
 
                 <p class="pt-2 hover:text-gray-200">
                   <%= items[i].title %>

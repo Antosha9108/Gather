@@ -1,35 +1,33 @@
 <%- include('partials/header') -%>
     <%- include('partials/navBar') -%>
 
-        <!-- <a href="/profile" class="username">
-            <p class="pl-6">
-                <%= user.userName %> <br> Add an event
-            </p>
-        </a> -->
         <div>
         </div>
 
         <div class="">
-            <ul class="m-8 p-3 grid lg:grid-cols-3 gap-10">
+            <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10">
                 <% for(var i=0; i<events.length; i++) {%>
                     <li class="">
                         <a href="/event/<%= events[i]._id%>">
                             <!-- event image -->
-                            <img class="card-img-top" src="<%= events[i].image%>">
+                            <img class="card-img-top shadow-lg hover:scale-105 hover:bg-opacity-50 transition ease-out duration-300"
+                                src="<%= events[i].image%>">
                             <!--event title  -->
                             <p class="pt-2 hover:text-gray-200">
                                 <%= events[i].title %>
                             </p>
+
+
+                            <!--Event by:  -->
+                            <!-- <p class="pl-6">
+                                by <%= user.userName %>
+                            </p> -->
+
 
                         </a>
                     </li>
                     <% } %>
             </ul>
         </div>
-
-
-
-
-
 
         <%- include('partials/footer') -%>

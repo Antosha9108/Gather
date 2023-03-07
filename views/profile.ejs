@@ -41,7 +41,7 @@
       <div class="">
         <p class=" flex justify-center mt-10">MY EVENTS</p>
 
-        <ul class="m-8 p-3 grid lg:grid-cols-3 gap-10">
+        <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10">
           <% for(var i=0; i<events.length; i++) {%>
             <li class="">
               <a href="/event/<%= events[i]._id%>">
@@ -59,7 +59,7 @@
       <div class="">
         <p class="mt-10 flex justify-center">MY ITEMS</p>
         <div class="col-6 feed-content">
-          <ul class="m-8 p-3 grid lg:grid-cols-3 gap-10">
+          <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10">
             <% for(var i=0; i<items.length; i++) {%>
               <li class="">
                 <a href="/item/<%= items[i]._id%>">
