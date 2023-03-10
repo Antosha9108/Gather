@@ -17,18 +17,21 @@
                     </div>
                     <% }) %>
                       <% } %>
-                        <form action="/login" method="POST">
-                          <div class="mb-3 ">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control bg-gray-900" id="exampleInputEmail1"
-                              aria-describedby="emailHelp" name="email" />
+                        <form action="/login" method="POST" class="">
+                          <div class="mb-3 justify-center">
+                            <label for="exampleInputEmail1" class="form-label"></label>
+                            <input type="email"
+                              class="form-control bg-gray-200 rounded-lg border border-gray-500 hover:border-gray-900 px-2 m-1 placeholder placeholder:text-slate-900"
+                              placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />
                           </div>
                           <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label ">Password</label>
-                            <input type="password" class="form-control bg-gray-900" id="exampleInputPassword1"
-                              name="password" />
+                            <label for="exampleInputPassword1" class="form-label "></label>
+                            <input type="password"
+                              class="form-control bg-gray-200 rounded-lg border border-gray-500 hover:border-gray-900 px-2 m-1 placeholder placeholder:text-slate-900"
+                              placeholder="Password" id="exampleInputPassword1" name="password" />
                           </div>
-                          <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50">Submit</button>
+                          <button type="submit"
+                            class="btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 p-2 m-2">Submit</button>
                         </form>
       </section>
     </div>

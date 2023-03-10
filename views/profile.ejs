@@ -3,37 +3,15 @@
     <div class="">
       <div class="">
         <div class="username">
-          <p>
+          <!-- <p>
             <%= user.userName %>
-          </p>
+          </p> -->
           <!-- commented out email on the profile page -->
           <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
           <!-- <a href="/logout" class=" btn col-3  bg-blue-500 shadow-lg shadow-blue-500/50">Logout</a> -->
         </div>
 
-        <!-- create an event -->
-        <h2 class="flex justify-center">Add an event</h2>
-        <div class="mt-5 flex justify-center">
 
-          <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
-            <div class="mb-3 flex flex-col">
-              <label for="title" class=" ">Title</label>
-              <input type="text" class=" w-80 rounded-lg bg-gray-900" id="title" name="title">
-            </div>
-            <div class="mb-3">
-              <label for="caption" class="">Description</label>
-              <textarea rows='6' class=" block w-80 bg-gray-900" id="description" name="description"
-                placeholder="Event description"></textarea>
-            </div>
-            <div>
-              <label for="imgUpload" class="">Image</label>
-              <input type="file" class=" w-80 block bg-gray-900" id="imageUpload" name="file">
-            </div>
-            <div class="flex justify-center">
-              <button type="submit" class="btn bg-blue-500 shadow-lg shadow-blue-500/50" value="Upload">Submit</button>
-            </div>
-          </form>
-        </div>
       </div>
 
 
@@ -74,9 +52,36 @@
         </div>
       </div>
 
+      <!-- create an event -->
+      <h2 class="flex justify-center">Create event</h2>
+      <div class="mt-5 flex justify-center">
+
+        <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 flex flex-col">
+            <label for="title" class=" "></label>
+            <input type="text" class=" w-80 rounded bg-gray-200 placeholder placeholder:text-slate-900" id="title"
+              name="title" placeholder=" Add Title">
+          </div>
+          <div class="mb-3">
+            <label for="caption" class=""></label>
+            <textarea rows='6' class=" block w-80 bg-gray-200 rounded placeholder placeholder:text-slate-900"
+              id="description" name="description" placeholder="Event Notes"></textarea>
+          </div>
+          <div>
+            <label for="imgUpload" class="">Image</label>
+            <input type="file" class=" w-80 block bg-gray-200 rounded" id="imageUpload" name="file">
+          </div>
+          <div class="flex justify-center">
+            <button type="submit" class="btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-600"
+              value="Upload">Submit</button>
+          </div>
+        </form>
+      </div>
+
 
       <div class=" flex justify-center">
-        <a class=" btn bg-blue-500 shadow-lg shadow-blue-500/50 m-5" href="/eventFeed">Return
+        <a class=" btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200"
+          href="/eventFeed">Return
           to
           Feed</a>
       </div>

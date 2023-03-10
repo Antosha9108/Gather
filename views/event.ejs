@@ -20,9 +20,11 @@
         <div class="flex justify-center">
             <%if(event.user==user.id){ %>
 
-                <button><i class="btn  fa-solid fa-bookmark bg-blue-500 shadow-lg shadow-blue-500/50 m-5"></i></button>
+                <button><i
+                        class="btn  fa-solid fa-bookmark bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 px-3 m-2"></i></button>
                 <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST" class="col-3">
-                    <button class="btn  fa-regular fa-trash-can bg-blue-500 shadow-lg shadow-blue-500/50 m-5"
+                    <button
+                        class="btn  fa-regular fa-trash-can bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 px-3 m-2"
                         type="submit"></button>
                 </form>
                 <%}%>
@@ -54,37 +56,43 @@
 
 
             <!-- Create an item -->
-            <h2 class="flex justify-center">Add an Item</h2>
-            <div class="mt-5 flex justify-center">
+            <h2 class="flex justify-center">Add a dish</h2>
+            <div class="mt-5 flex justify-center ">
                 <form action="/item/createItem" enctype="multipart/form-data" method="POST">
                     <div class="mb-3 flex flex-col">
-                        <label for="title" class=" ">Title</label>
-                        <input type="text" class="w-80 rounded bg-gray-900" id="title" name="title">
+                        <label for="title" class=" "></label>
+                        <input type="text" class="w-80 rounded bg-gray-200 placeholder placeholder:text-slate-900"
+                            id="title" name="title" placeholder="Dish name">
 
 
                         <input type="hidden" id="eventId" name='eventId' value="<%=event._id%>">
                     </div>
                     <div class="mb-3 flex flex-col">
-                        <label for="description" class="">Description</label>
-                        <textarea rows='6' class="w-80 rounded bg-gray-900" id="description" name="description"
-                            placeholder="Please add items on seperate lines"></textarea>
+                        <label for="description" class=""></label>
+                        <textarea rows='6' class="w-80 rounded bg-gray-200 placeholder placeholder:text-slate-900"
+                            id="description" name="description" placeholder="Dish Description"></textarea>
                     </div>
                     <div class="mb-3 flex flex-col">
                         <label for="imgUpload" class="">Image</label>
-                        <input type="file" class="w-80 rounded bg-gray-900" id="imageUpload" name="file">
+                        <input type="file" class="w-80 rounded bg-gray-200 placeholder placeholder:text-slate-900"
+                            id="imageUpload" name="file">
                     </div>
                     <div class="flex justify-center">
                         <button type="submit"
-                            class=" flex justify-center mt-5 btn bg-blue-500 shadow-lg shadow-blue-500/50"
+                            class=" btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-gray-200"
                             value="Upload">Submit</button>
+                        <a class="btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 p-2 m-2"
+                            href="/eventFeed">
+                            Feed</a>
                     </div>
                 </form>
             </div>
 
-            <div class="flex justify-center mt-5">
-                <a class="btn  bg-blue-500 shadow-lg shadow-blue-500/50" href="/eventFeed">Return to
+            <!-- <div class="flex justify-center mt-5">
+                <a class="btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-600 mb-5"
+                    href="/eventFeed">Return to
                     Feed</a>
-            </div>
+            </div> -->
         </div>
 
         <%- include('partials/footer') -%>
