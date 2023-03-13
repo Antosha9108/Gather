@@ -16,33 +16,36 @@
 
 
       <!-- show my events in profile -->
+
       <div class="">
         <p class=" flex justify-center mt-10">MY EVENTS</p>
-
-        <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10">
-          <% for(var i=0; i<events.length; i++) {%>
-            <li class="">
-              <a href="/event/<%= events[i]._id%>">
-                <img class="img-fluid card-img-top" src="<%= events[i].image%>">
-                <p class="pt-2 hover:text-gray-200">
-                  <%= events[i].title %>
-                </p>
-              </a>
-            </li>
-            <% } %>
-        </ul>
+        <div class="">
+          <!-- grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10 -->
+          <ul class="m-8 p-3 grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10">
+            <% for(var i=0; i<events.length; i++) {%>
+              <li class="hover:scale-105 hover:bg-opacity-50 transition ease-out duration-300">
+                <a href=" /event/<%=events[i]._id%>">
+                  <img class="card-img-top" src="<%= events[i].image%>">
+                  <p class="pt-2 hover:text-gray-400">
+                    <%= events[i].title %>
+                  </p>
+                </a>
+              </li>
+              <% } %>
+          </ul>
+        </div>
       </div>
 
       <!-- show my items in profile -->
       <div class="">
         <p class="mt-10 flex justify-center">MY ITEMS</p>
-        <div class="col-6 feed-content">
-          <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10">
+        <div class="">
+          <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  2xl:grid-cols-4 gap-10">
             <% for(var i=0; i<items.length; i++) {%>
-              <li class="">
+              <li class="hover:scale-105 hover:bg-opacity-50 transition ease-out duration-300">
                 <a href="/item/<%= items[i]._id%>">
                   <img class=" card-img-top" src="<%= items[i].image%>">
-                  <p class="pt-2 hover:text-gray-200">
+                  <p class="pt-2 hover:text-gray-400">
                     <%= items[i].title %>
                   </p>
                 </a>
