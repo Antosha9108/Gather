@@ -6,13 +6,7 @@
             <%= event.title %>
         </h2>
         <div class="flex justify-center">
-            <img class="rounded-lg w-80 h-80 card-img-top" src="<%= event.image%>" />
-
-
-
-
-
-
+            <img class="rounded-lg w-80 h-80 card-img-top " src="<%= event.image%>" />
         </div>
 
 
@@ -20,11 +14,18 @@
         <div class="flex justify-center">
             <%if(event.user==user.id){ %>
 
-                <button><i
-                        class="btn  fa-solid fa-bookmark bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 px-3 m-2"></i></button>
+
+
+
+                <button
+                    class="btn fa fa-plus  bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
+                    type="submit" onclick="openModalItem()"></button>
+
+                <button
+                    class="btn  fa-solid fa-bookmark bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"></i></button>
                 <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST" class="col-3">
                     <button
-                        class="btn  fa-regular fa-trash-can bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 px-3 m-2"
+                        class="btn  fa-regular fa-trash-can bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
                         type="submit"></button>
                 </form>
                 <%}%>
@@ -55,8 +56,8 @@
 
 
             <!-- Create an item -->
-            <h2 class="flex justify-center">Add a dish</h2>
-            <div class="mt-5 flex justify-center ">
+            <!-- <h2 class="flex justify-center">Add a dish</h2>
+            <div class="my-10 flex justify-center ">
                 <form action="/item/createItem" enctype="multipart/form-data" method="POST">
                     <div class="mb-3 flex flex-col">
                         <label for="title" class=" "></label>
@@ -78,20 +79,112 @@
                     </div>
                     <div class="flex justify-center">
                         <button type="submit"
-                            class=" btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-gray-200"
+                            class=" bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
                             value="Upload">Submit</button>
-                        <a class="btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 p-2 m-2"
+                        <a class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
                             href="/eventFeed">
                             Feed</a>
                     </div>
                 </form>
-            </div>
-
-            <!-- <div class="flex justify-center mt-5">
-                <a class="btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-600 mb-5"
-                    href="/eventFeed">Return to
-                    Feed</a>
             </div> -->
+
+        </div>
+        <!-- <script src="modal.js"></script>  -->
+        <!-- Script to open and close modal -->
+
+
+
+
+
+        <!--! SECOND MODAL TO MAKE ITEMS -->
+        <div id="modalItem"
+            class=" fixed z-10 inset-0 overflow-y-auto hidden fixed inset-0 bg-gray-700 bg-opacity-75 transition-opacity">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="bg-white rounded-lg w-1/2 p-8 border border-gray-500">
+                    <h2 class="text-2xl font-bold mb-4">Add item</h2>
+
+
+                    <form action="/item/createItem" enctype="multipart/form-data" method="POST">
+
+                        <div class=" mb-4">
+                            <label class="block text-gray-700 font-bold mb-2" for="title">
+                                Item Name
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="title" name="title" type="text" placeholder="Item name">
+
+                            <input type="hidden" id="eventId" name='eventId' value="<%=event._id%>">
+                        </div>
+
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-bold mb-2" for="description">
+                                Event Description
+                            </label>
+                            <textarea
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="description" name="description" placeholder="Enter item description"></textarea>
+                        </div>
+
+
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-bold mb-2" for="imgUpload">
+                                Event Image
+                            </label>
+                            <input type="file" class="border p-2 w-full" id="imageUpload" name="file">
+                        </div>
+
+
+                        <div class="flex justify-center">
+                            <button type="submit"
+                                class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300">
+                                Save
+                            </button>
+                            <button
+                                class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
+                                onclick="closeModalItem()">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- script for event modal (create event in the nav) -->
+        <script>
+            function openModal() {
+                document.getElementById("modal").classList.remove("hidden");
+            }
+            function closeModal() {
+                document.getElementById("modal").classList.add("hidden");
+            }
+        </script>
+
+        <!-- script for modal item form (plus button) -->
+        <script>
+            function openModalItem() {
+                document.getElementById("modalItem").classList.remove("hidden");
+            }
+            function closeModalItem() {
+                document.getElementById("modalItem").classList.add("hidden");
+            }
+        </script>
         <%- include('partials/footer') -%>

@@ -5,7 +5,8 @@
         </div>
 
         <div class="">
-            <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10">
+            <ul
+                class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-10">
                 <% for(var i=0; i<events.length; i++) {%>
                     <li class="hover:scale-105 hover:bg-opacity-50 transition ease-out duration-300">
                         <a href="/event/<%= events[i]._id%>">
@@ -29,5 +30,5 @@
                     <% } %>
             </ul>
         </div>
-
+        <script src="modal.js"></script>
         <%- include('partials/footer') -%>

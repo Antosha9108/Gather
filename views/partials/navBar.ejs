@@ -17,7 +17,7 @@
                 <div class="px-5 xl:px-12 py-6 flex w-full items-center">
                     <a class="text-3xl font-bold font-heading" href="/eventFeed">
                         <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                        PotLuck
+                        Gather
                     </a>
                     <!-- Nav Links -->
 
@@ -27,7 +27,12 @@
                         <li><a class="hover:text-gray-200" href="/feed">Items</a></li>
                         <!-- <li><a class="hover:text-gray-200" href="#">Favorites</a></li> -->
                         <li><a class="hover:text-gray-200" href="/logout">Logout</a></li>
+
                     </ul>
+                    <button
+                        class="justify-end bg-orange-500 rounded-full px-2 py-1  text-white hover:text-gray-200 font-bold hover:scale-105 transition ease-out duration-300"
+                        onclick="openModal()">Create
+                        Event</button>
 
                     <!-- Header Icons -->
                     <!-- <div class=" hidden xl:flex items-center space-x-5 items-center">
@@ -105,6 +110,61 @@
 
 
 
+    <!-- MODAL TEST -->
+    <div id="modal"
+        class=" fixed z-10 inset-0 overflow-y-auto hidden fixed inset-0 bg-gray-700 bg-opacity-75 transition-opacity">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="bg-white rounded-lg w-1/2 p-8 border border-gray-500">
+                <h2 class="text-2xl font-bold mb-4">Add Event</h2>
+
+
+                <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
+
+                    <div class=" mb-4">
+                        <label class="block text-gray-700 font-bold mb-2" for="title">
+                            Event Title
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="title" name="title" type="text" placeholder="Enter event title">
+                    </div>
+
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2" for="caption">
+                            Event Notes
+                        </label>
+                        <textarea
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="description" name="description" placeholder="Enter event notes"></textarea>
+                    </div>
+
+
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2" for="imgUpload">
+                            Event Image
+                        </label>
+                        <input type="file" class="border p-2 w-full" id="imageUpload" name="file">
+                    </div>
+
+
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300">
+                            Save
+                        </button>
+                        <button
+                            class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
+                            onclick="closeModal()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <script src="modal.js"></script> -->
     <!-- <script src="nav.js"></script> -->
 </body>
 

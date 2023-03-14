@@ -1,65 +1,64 @@
 <%- include('partials/header') -%>
   <%- include('partials/navBar') -%>
     <div class="flex justify-center">
-      <div class="mt-5 ">
-        <div class="">
-          <h2 class="flex justify-center">
-            <%= item.title %>
-          </h2>
-          <!--Item made by:  -->
-          <!-- <p class="pl-6">
+      <div class="">
+        <h2 class="flex justify-center m-5">
+          <%= item.title %>
+        </h2>
+        <!--Item made by:  -->
+        <!-- <p class="pl-6">
             by <%= user.userName %>
           </p> -->
-          <div class=" flex justify-center">
-            <img class="rounded-lg w-80 h-80 card-img-top" src="<%= item.image%>" />
-          </div>
+        <div class=" flex justify-center">
+          <img class="rounded-lg w-80 h-80 card-img-top" src="<%= item.image%>" />
+        </div>
 
 
-          <!-- item buttons -->
-          <div class="flex justify-center">
-            <!-- <form class="" action="/item/likeItem/<%= item.id %>?_method=PUT" method="POST">
+        <!-- item buttons -->
+        <div class="flex justify-center">
+          <!-- <form class="" action="/item/likeItem/<%= item.id %>?_method=PUT" method="POST">
               <button
                 class="btn  fa fa-heart bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 px-3 m-2"
                 type="submit"></button>
             </form> -->
 
-            <%if(item.user==user.id){ %>
+          <%if(item.user==user.id){ %>
 
-              <button><i
-                  class="btn  fa-solid fa-bookmark bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 px-3 m-2"></i></button>
-              <form action="/item/deleteItem/<%= item.id %>?_method=DELETE" method="POST" class="col-3">
-                <button
-                  class="btn  fa-regular fa-trash-can bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 px-3 m-2"
-                  type="submit"></button>
-              </form>
-              <%}%>
-          </div>
+            <button><i
+                class="btn  fa-solid fa-bookmark bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"></i></button>
+            <form action="/item/deleteItem/<%= item.id %>?_method=DELETE" method="POST" class="col-3">
+              <button
+                class="btn  fa-regular fa-trash-can bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
+                type="submit"></button>
+            </form>
+            <%}%>
+        </div>
 
-          <div class="like-counter">
-            <!-- like counter -->
-            <!-- <h3 class="col-3">Likes: <%= item.likes %>
+        <div class="like-counter">
+          <!-- like counter -->
+          <!-- <h3 class="col-3">Likes: <%= item.likes %>
             </h3> -->
-          </div>
-          <!-- caption -->
-          <div class="col-3 mt-5 caption">
-            <!-- <p><%= item.description %></p> -->
-            <ul class="list-group list-group block w-full rounded bg-gray-200 placeholder placeholder:text-slate-900 ">
-              <% for(var i=0; i<item.description.length; i++) {%>
-                <li class="">
-                  <%= item.description[i] %>
-                </li>
-                <% } %>
-            </ul>
+        </div>
+        <!-- caption -->
+        <div class="col-3 mt-5 caption">
+          <!-- <p><%= item.description %></p> -->
+          <ul class="list-group list-group block w-full rounded bg-gray-200 placeholder placeholder:text-slate-900 ">
+            <% for(var i=0; i<item.description.length; i++) {%>
+              <li class="">
+                <%= item.description[i] %>
+              </li>
+              <% } %>
+          </ul>
 
-          </div>
-
-
-
-          <!-- comments -->
+        </div>
 
 
-          <!-- ?? uncomment this to get comments displayed in the item -->
-          <!-- <div class="comment flex justify-center">
+
+        <!-- comments -->
+
+
+        <!-- ?? uncomment this to get comments displayed in the item -->
+        <!-- <div class="comment flex justify-center">
           <form action="/comment/createComment/<%= item.id %>" method="POST">
 
             <label for="comment" class="form-label">Comment</label>
@@ -70,14 +69,13 @@
           </div>
         
         <!-- ??---------------------?? -->
-        </div>
 
 
         <!-- return buttons -->
 
         <div class="col-6 mt-5 return-buttons flex justify-center">
           <!-- <a class="btn btn-primary bg-blue-500 shadow-lg shadow-blue-500/50" href="/profile">Return to Profile</a> -->
-          <a class="btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200 px-3 m-2"
+          <a class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
             href="/eventFeed">
             Return to Feed</a>
         </div>
@@ -86,4 +84,16 @@
 
 
     </div>
+
+
+
+    <!-- Script to open and close modal -->
+    <script>
+      function openModal() {
+        document.getElementById("modal").classList.remove("hidden");
+      }
+      function closeModal() {
+        document.getElementById("modal").classList.add("hidden");
+      }
+    </script>
     <%- include('partials/footer') -%>

@@ -56,37 +56,116 @@
       </div>
 
       <!-- create an event -->
-      <h2 class="flex justify-center">Create event</h2>
+      <!-- <h2 class="flex justify-center">Create event</h2>
       <div class="mt-5 flex justify-center">
 
         <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
+
+
           <div class="mb-3 flex flex-col">
             <label for="title" class=" "></label>
             <input type="text" class=" w-80 rounded bg-gray-200 placeholder placeholder:text-slate-900" id="title"
               name="title" placeholder=" Add Title">
           </div>
+
+
           <div class="mb-3">
             <label for="caption" class=""></label>
             <textarea rows='6' class=" block w-80 bg-gray-200 rounded placeholder placeholder:text-slate-900"
               id="description" name="description" placeholder="Event Notes"></textarea>
           </div>
+
+
+
           <div>
             <label for="imgUpload" class="">Image</label>
             <input type="file" class=" w-80 block bg-gray-200 rounded" id="imageUpload" name="file">
           </div>
+
+
+
           <div class="flex justify-center">
-            <button type="submit" class="btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-600"
-              value="Upload">Submit</button>
+            <button type="submit" class="btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-5 text-gray-600"
+              value="Upload">Add event</button>
           </div>
         </form>
       </div>
 
 
       <div class=" flex justify-center">
-        <a class=" btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 mt-2 text-gray-200"
+        <a class=" btn bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-10 text-gray-200"
           href="/eventFeed">Return
           to
           Feed</a>
-      </div>
+      </div> -->
     </div>
+
+
+
+    <!-- Button to open modal form -->
+    <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="openModal()">Create
+      Event</button> -->
+
+    <!-- Modal form -->
+    <!-- <div id="modal"
+      class=" fixed z-10 inset-0 overflow-y-auto hidden fixed inset-0 bg-gray-700 bg-opacity-75 transition-opacity">
+      <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white rounded-lg w-1/2 p-8 border border-gray-500">
+          <h2 class="text-2xl font-bold mb-4">Add Event</h2>
+
+
+          <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
+
+            <div class=" mb-4">
+              <label class="block text-gray-700 font-bold mb-2" for="title">
+                Event Title
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="title" name="title" type="text" placeholder="Enter event title">
+            </div>
+
+
+            <div class="mb-4">
+              <label class="block text-gray-700 font-bold mb-2" for="caption">
+                Event Notes
+              </label>
+              <textarea
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="description" name="description" placeholder="Enter event notes"></textarea>
+            </div>
+
+
+
+            <div class="mb-4">
+              <label class="block text-gray-700 font-bold mb-2" for="imgUpload">
+                Event Image
+              </label>
+              <input type="file" class="border p-2 w-full" id="imageUpload" name="file">
+            </div>
+
+
+            <div class="flex justify-end">
+              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Save
+              </button>
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onclick="closeModal()">close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Script to open and close modal -->
+    <!-- <script>
+      function openModal() {
+        document.getElementById("modal").classList.remove("hidden");
+      }
+      function closeModal() {
+        document.getElementById("modal").classList.add("hidden");
+      }
+    </script> -->
+    <script src="modal.js"></script>
+
     <%- include('partials/footer') -%>

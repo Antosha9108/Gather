@@ -18,10 +18,10 @@
 # Run
 
 `npm start`
-# PotLuck
+# Gather
 <!-- ![preppLogo](https://user-images.githubusercontent.com/67973604/194168057-c3d3e61e-aa25-486b-ae90-de607c4037fe.gif) -->
 
-PotLuck is a full-stack web application to help people to plan their parties and events easier and faster.
+Gather is a full-stack web application to help people to plan their parties and events easier and faster.
 Users can add dishes(or other things) with descriptions and ingredients/items needed.
 
  # Optimization:
