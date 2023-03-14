@@ -101,9 +101,12 @@
             class=" fixed z-10 inset-0 overflow-y-auto hidden fixed inset-0 bg-gray-700 bg-opacity-75 transition-opacity">
             <div class="flex items-center justify-center min-h-screen">
                 <div class="bg-white rounded-lg w-1/2 p-8 border border-gray-500">
-                    <h2 class="text-2xl font-bold mb-4">Add item</h2>
-
-
+                    <div class="flex justify-between">
+                        <h2 class="text-2xl font-bold mb-4">Add item</h2>
+                        <h2 class="fa-solid fa-x  rounded p-2 m-2  hover:scale-110 transition ease-out duration-300"
+                            onclick="closeModalItem()">
+                        </h2>
+                    </div>
                     <form action="/item/createItem" enctype="multipart/form-data" method="POST">
 
                         <div class=" mb-4">
@@ -142,11 +145,10 @@
                                 class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300">
                                 Save
                             </button>
-                            <button
-                                class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
-                                onclick="closeModalItem()">Close</button>
+
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
