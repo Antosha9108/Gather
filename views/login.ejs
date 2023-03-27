@@ -1,8 +1,10 @@
 <%- include('partials/header') -%>
 
-  <main class="container">
-    <div class="center-screen">
-      <section class="col-6 mt-5">
+
+  <div class=" center-screen">
+    <div class=" ">
+      <!-- bg-gray-800 bg-opacity-50 p-16 shadow-lg  rounded-lg -->
+      <section class="">
         <% if (locals.messages.errors) { %>
           <% messages.errors.forEach( el=> { %>
             <div class="alert alert-danger">
@@ -21,20 +23,22 @@
                           <div class="mb-3 justify-center">
                             <label for="exampleInputEmail1" class="form-label"></label>
                             <input type="email"
-                              class="form-control bg-gray-200 rounded-lg border border-gray-500 hover:border-gray-900 px-2 m-1 placeholder placeholder:text-slate-900"
+                              class="form-control  rounded-lg border border-gray-500 hover:border-gray-900 px-3 m-1 placeholder placeholder:text-slate-900"
                               placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />
                           </div>
                           <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label "></label>
                             <input type="password"
-                              class="form-control bg-gray-200 rounded-lg border border-gray-500 hover:border-gray-900 px-2 m-1 placeholder placeholder:text-slate-900"
+                              class="form-control rounded-lg border border-gray-500 hover:border-gray-900 px-3 m-1 placeholder placeholder:text-slate-900"
                               placeholder="Password" id="exampleInputPassword1" name="password" />
                           </div>
                           <button type="submit"
-                            class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300">Submit</button>
+                            class="bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded px-4 py-2 m-2  text-sm text-white  hover:scale-105 transition ease-out duration-300">Login</button>
                         </form>
       </section>
     </div>
-  </main>
+
+  </div>
+
 
   <%- include('partials/footer') -%>

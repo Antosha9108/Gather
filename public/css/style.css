@@ -23,15 +23,6 @@ body {
 }
 
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    /* border: 1px solid green; */
-    text-align: center;
-}
-
-
 .class-center {
     display: flex;
 

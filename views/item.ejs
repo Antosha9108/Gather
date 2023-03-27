@@ -25,10 +25,10 @@
           <%if(item.user==user.id){ %>
 
             <button><i
-                class="btn  fa-solid fa-bookmark bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"></i></button>
+                class="btn  fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:scale-105 transition ease-out duration-300"></i></button>
             <form action="/item/deleteItem/<%= item.id %>?_method=DELETE" method="POST" class="col-3">
               <button
-                class="btn  fa-regular fa-trash-can bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
+                class="btn  fa-regular fa-trash-can bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:scale-105 transition ease-out duration-300"
                 type="submit"></button>
             </form>
             <%}%>
@@ -75,7 +75,7 @@
 
         <div class="col-6 mt-5 return-buttons flex justify-center">
           <!-- <a class="btn btn-primary bg-blue-500 shadow-lg shadow-blue-500/50" href="/profile">Return to Profile</a> -->
-          <a class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
+          <a class="bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white  hover:scale-105 transition ease-out duration-300"
             href="/eventFeed">
             Return to Feed</a>
         </div>

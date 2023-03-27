@@ -6,7 +6,12 @@
             <%= event.title %>
         </h2>
         <div class="flex justify-center">
-            <img class="rounded-lg w-80 h-80 card-img-top " src="<%= event.image%>" />
+            <img class=" w-80 h-80 card-img-top " src="<%= event.image%>" />
+        </div>
+        <div class="flex justify-center">
+            <div class="flex justify-center  w-80 p-4 rounded-b-lg border-1 border-gray-500">
+                <%= event.description %>
+            </div>
         </div>
 
 
@@ -18,14 +23,14 @@
 
 
                 <button
-                    class="btn fa fa-plus  bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
+                    class="btn fa fa-plus  bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"
                     type="submit" onclick="openModalItem()"></button>
 
                 <button
-                    class="btn  fa-solid fa-bookmark bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"></i></button>
+                    class="btn  fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"></i></button>
                 <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST" class="col-3">
                     <button
-                        class="btn  fa-regular fa-trash-can bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300"
+                        class="btn  fa-regular fa-trash-can bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"
                         type="submit"></button>
                 </form>
                 <%}%>
@@ -46,7 +51,9 @@
                                 </p>
                                 <div class=" flex flex-row">
                                     <!-- item description if needed -->
-                                    <!-- <p class="post-title"><%= items[i].description %></p> -->
+                                    <!-- <p class="post-title">
+                                        <%= items[i].description %>
+                                    </p> -->
                                 </div>
                             </a>
                         </li>
@@ -100,9 +107,9 @@
         <div id="modalItem"
             class=" fixed z-10 inset-0 overflow-y-auto hidden fixed inset-0 bg-gray-700 bg-opacity-75 transition-opacity">
             <div class="flex items-center justify-center min-h-screen">
-                <div class="bg-white rounded-lg w-1/2 p-8 border border-gray-500">
+                <div class="bg-white rounded-lg w-1/2 p-8 border border-gray-700">
                     <div class="flex justify-between">
-                        <h2 class="text-2xl font-bold mb-4">Add item</h2>
+                        <h2 class="text-2xl font-bold mb-4">Add Item</h2>
                         <h2 class="fa-solid fa-x  rounded p-2 m-2  hover:scale-110 transition ease-out duration-300"
                             onclick="closeModalItem()">
                         </h2>
@@ -142,8 +149,8 @@
 
                         <div class="flex justify-center">
                             <button type="submit"
-                                class="bg-orange-500 shadow-lg shadow-gray-500/50 rounded p-2 m-2 text-white hover:text-gray-200 hover:scale-105 transition ease-out duration-300">
-                                Save
+                                class="bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300">
+                                Add Item
                             </button>
 
                         </div>
