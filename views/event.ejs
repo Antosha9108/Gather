@@ -17,17 +17,18 @@
 
         <!-- event buttons -->
         <div class="flex justify-center">
+
+
+
+
+
+            <button
+                class="btn fa fa-plus  bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"
+                type="submit" onclick="openModalItem()"></button>
+
+            <button
+                class="btn  fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"></i></button>
             <%if(event.user==user.id){ %>
-
-
-
-
-                <button
-                    class="btn fa fa-plus  bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"
-                    type="submit" onclick="openModalItem()"></button>
-
-                <button
-                    class="btn  fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"></i></button>
                 <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST" class="col-3">
                     <button
                         class="btn  fa-regular fa-trash-can bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"

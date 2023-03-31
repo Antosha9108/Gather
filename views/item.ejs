@@ -22,10 +22,11 @@
                 type="submit"></button>
             </form> -->
 
-          <%if(item.user==user.id){ %>
 
-            <button><i
-                class="btn  fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:scale-105 transition ease-out duration-300"></i></button>
+
+          <button><i
+              class="btn  fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:scale-105 transition ease-out duration-300"></i></button>
+          <%if(item.user==user.id){ %>
             <form action="/item/deleteItem/<%= item.id %>?_method=DELETE" method="POST" class="col-3">
               <button
                 class="btn  fa-regular fa-trash-can bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:scale-105 transition ease-out duration-300"
