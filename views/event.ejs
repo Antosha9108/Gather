@@ -1,68 +1,68 @@
 <%- include('partials/header') -%>
     <%- include('partials/navBar') -%>
-
-        <!-- event description -->
-        <h2 class="flex justify-center m-5">
-            <%= event.title %>
-        </h2>
-        <div class="flex justify-center">
-            <img class=" w-80 h-80 card-img-top " src="<%= event.image%>" />
-        </div>
-        <div class="flex justify-center">
-            <div class="flex justify-center  w-80 p-4 rounded-b-lg border-1 border-gray-500">
-                <%= event.description %>
+        <div class="h-screen">
+            <!-- event description -->
+            <h2 class="flex justify-center m-5">
+                <%= event.title %>
+            </h2>
+            <div class="flex justify-center">
+                <img class=" w-80 h-80 card-img-top " src="<%= event.image%>" />
             </div>
-        </div>
+            <div class="flex justify-center">
+                <div class="flex justify-center  w-80 p-4 rounded-b-lg border-1 border-gray-500">
+                    <%= event.description %>
+                </div>
+            </div>
 
 
-        <!-- event buttons -->
-        <div class="flex justify-center">
+            <!-- event buttons -->
+            <div class="flex justify-center">
 
 
 
 
 
-            <button
-                class="btn fa fa-plus  bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"
-                type="submit" onclick="openModalItem()"></button>
+                <button
+                    class="btn fa fa-plus  bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"
+                    type="submit" onclick="openModalItem()"></button>
 
-            <button
-                class="btn  fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"></i></button>
-            <%if(event.user==user.id){ %>
-                <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST" class="col-3">
-                    <button
-                        class="btn  fa-regular fa-trash-can bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"
-                        type="submit"></button>
-                </form>
-                <%}%>
-        </div>
+                <button
+                    class="btn  fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"></i></button>
+                <%if(event.user==user.id){ %>
+                    <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST" class="col-3">
+                        <button
+                            class="btn  fa-regular fa-trash-can bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white  hover:scale-105 transition ease-out duration-300"
+                            type="submit"></button>
+                    </form>
+                    <%}%>
+            </div>
 
 
-        <!-- Display event items -->
+            <!-- Display event items -->
 
-        <div class="">
             <div class="">
-                <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  2xl:grid-cols-4 gap-10">
-                    <% for(var i=0; i<items.length; i++) {%>
-                        <li class="hover:scale-105 hover:bg-opacity-50 transition ease-out duration-300">
-                            <a href="/item/<%= items[i]._id%>">
-                                <img class="card-img-top" src="<%= items[i].image%>">
-                                <p class="pt-2 hover:text-gray-400">
-                                    <%= items[i].title %>
-                                </p>
-                                <div class=" flex flex-row">
-                                    <!-- item description if needed -->
-                                    <!-- <p class="post-title">
+                <div class="">
+                    <ul class="m-8 p-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  2xl:grid-cols-4 gap-10">
+                        <% for(var i=0; i<items.length; i++) {%>
+                            <li class="hover:scale-105 hover:bg-opacity-50 transition ease-out duration-300">
+                                <a href="/item/<%= items[i]._id%>">
+                                    <img class="card-img-top" src="<%= items[i].image%>">
+                                    <p class="pt-2 hover:text-gray-400">
+                                        <%= items[i].title %>
+                                    </p>
+                                    <div class=" flex flex-row">
+                                        <!-- item description if needed -->
+                                        <!-- <p class="post-title">
                                         <%= items[i].description %>
                                     </p> -->
-                                </div>
-                            </a>
-                        </li>
-                        <% } %>
-                </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <% } %>
+                    </ul>
+                </div>
+
             </div>
-
-
             <!-- Create an item -->
             <!-- <h2 class="flex justify-center">Add a dish</h2>
             <div class="my-10 flex justify-center ">

@@ -28,14 +28,15 @@ Users can add dishes(or other things) with descriptions and ingredients/items ne
 - [ ] Add links/ and buttons to reroute to different feeds and profile.
 - [x] Add my events and my items to the profile.
 - [x] Add nav bar.
+- [x] Add Responsive burger menu for mobile.
 - [ ] Add avatar pictures to views and user model.
 - [ ] Add avatar picture to nav bar.
 - [ ] Add bookmark/favorites Functionality.
 - [ ] Add my favorites tab to the profile/nav bar.
 - [x] Add delete button to events.
 - [ ] Add dates to the events(model,view,controller), implement calendar and see if can add to google calendars.
-- [ ] Add floating button with form to add event or item.
-- [ ] Add Responsive CSS.
+- [x] Add floating button with form to add event or item.
+- [x] Add Responsive CSS.
 - [ ] Fix the footer.
 - [ ] Fix the supported files in Schemas.
 # Whiteboard:
