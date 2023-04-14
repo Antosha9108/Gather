@@ -29,6 +29,7 @@ const ItemSchema = new mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
+    userName: { type: String, unique: true },
     ref: "User",
   },
   createdAt: {
