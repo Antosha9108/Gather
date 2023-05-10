@@ -16,12 +16,12 @@
             <nav class="flex justify-between bg-gray-900 text-white w-screen">
                 <div class="px-5 xl:px-12 py-6 flex w-full items-center">
                     <a class="text-3xl font-bold font-heading" href="/eventFeed">
-                        <!-- <img class="h-9" src="logo.png" alt="logo"> -->
                         Gather
                     </a>
                     <!-- Nav Links -->
 
-                    <ul class="flex flex-wrap px-4 mx-auto font-semibold font-heading lg:space-x-12  space-x-2">
+                    <ul
+                        class="hidden md:flex flex-wrap px-4 mx-auto font-semibold font-heading lg:space-x-12  space-x-2">
                         <li><a class="hover:text-gray-200 hover:underline hover:decoration-sky-500 hover:decoration-2"
                                 href="/profile">Profile</a></li>
                         <li><a class="hover:text-gray-200 hover:underline hover:decoration-sky-500 hover:decoration-2"
@@ -34,80 +34,44 @@
 
                     </ul>
                     <button
-                        class="justify-end bg-sky-500/75 rounded-md px-3 py-2 text-sm hover:bg-sky-500/100 hover:scale-105 transition ease-out duration-300"
+                        class="hidden md:flex justify-end bg-sky-500/75 rounded-md px-3 py-2 text-sm hover:bg-sky-500/100 hover:scale-105 transition ease-out duration-300"
                         onclick="openModal()">Create
                         Event</button>
 
-                    <!-- Header Icons -->
-                    <!-- <div class=" hidden xl:flex items-center space-x-5 items-center">
-                        <a class="hover:text-gray-200" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </a>
-                        <a class="flex items-center hover:text-gray-200" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                            <span class="flex absolute -mt-5 ml-4">
-                                <span
-                                    class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
-                                </span>
-                            </span>
-                        </a>
 
-                    </div> -->
                 </div>
-                <!-- Responsive navbar -->
-                <!-- <a class="xl:hidden flex mr-6 items-center" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <span class="flex absolute -mt-5 ml-4">
-                        <span
-                            class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
-                        </span>
-                    </span>
-                </a> -->
-
-
+                <!--! Responsive navbar -->
                 <!-- burger icon for mobile nav -->
-                <!-- <div class="self-center mr-12 md:hidden" id="burger">
-
+                <div class="self-center mr-12 md:hidden" id="burger">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                </div> -->
-
-
-
-
-
-
+                </div>
             </nav>
 
 
             <!--Responsive burger nav menu  -->
-            <!-- <div class="md:hidden grid  justify-end bg-gray-900">
-                <ul class=" md:hidden grid md:flex-col justify-end  px-4 mb-3 font-semibold" id="menu">
+            <div class="md:hidden flex justify-end bg-gray-900">
+                <ul class=" md:hidden grid md:flex-col px-4 mb-3 font-semibold text-white" id="menu">
 
-                    <li><a class="hover:text-gray-200" href="/profile">Profile</a></li>
-                    <li><a class="hover:text-gray-200" href="/eventFeed">Events</a></li>
-                    <li><a class="hover:text-gray-200" href="/feed">Items</a></li>
-                    <li><a class="hover:text-gray-200" href="#">Favorites</a></li>
-                    <li><a class="hover:text-gray-200" href="/logout">Logout</a></li>
+                    <li><a class="ml-6 hover:text-gray-200 hover:underline hover:decoration-sky-500 hover:decoration-2"
+                            href="/profile">Profile</a></li>
+                    <li><a class="ml-6 hover:text-gray-200 hover:underline hover:decoration-sky-500 hover:decoration-2"
+                            href="/eventFeed">Events</a></li>
+                    <li><a class="ml-6 hover:text-gray-200 hover:underline hover:decoration-sky-500 hover:decoration-2"
+                            href="/feed">Items</a></li>
+                    <!-- <li><a class="ml-6 hover:text-gray-200 hover:underline hover:decoration-sky-500 hover:decoration-2"
+                            href="#">Favorites</a></li> -->
+                    <li><a class="ml-6 hover:text-gray-200 hover:underline hover:decoration-sky-500 hover:decoration-2"
+                            href="/logout">Logout</a></li>
+                    <button
+                        class="justify-end bg-sky-500/75 rounded-md px-3 py-2 text-sm hover:bg-sky-500/100 hover:scale-105 transition ease-out duration-300"
+                        onclick="openModal()">Create
+                        Event</button>
                 </ul>
-            </div> -->
+            </div>
         </section>
 
     </div>
@@ -172,6 +136,18 @@
 
     <!-- <script src="modal.js"></script> -->
     <!-- <script src="nav.js"></script> -->
+    <script>
+        const burger = document.querySelector('#burger');
+        const menu = document.querySelector('#menu');
+
+
+        burger.addEventListener('click', () => {
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden')
+            }
+        })</script>
 </body>
 
 

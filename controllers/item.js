@@ -53,6 +53,8 @@ module.exports = {
       //id === 63dd8cb9a9ee09c2967fbe35
       const item = await Item.findById(req.params.id);
       const event = await Event.findById(req.params.id);
+      const user = await User.findById(req.params.id);
+
 
       //?? controller for comments
       // const comments = await Comment.find({ post: req.params.id }).sort({ createdAt: "desc" }).lean();
@@ -109,6 +111,7 @@ module.exports = {
       let item = await Item.findById({ _id: req.params.id });
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(item.cloudinaryId);
+
       // Delete post from DB
       await Item.remove({ _id: req.params.id });
       console.log("Deleted Item");
