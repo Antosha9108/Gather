@@ -8,8 +8,6 @@
             by <%= user.userName %>
           </p> -->
 
-
-
         <!-- !!!!! test div start -->
         <div class="flex flex-col md:flex-row md:space-around  container mx-auto mt-10">
 
@@ -40,8 +38,8 @@
                 </li>
                 <% } %>
             </ul>
-            <!-- <p class="mt-3">By: <%=item.user.userName %>
-            </p> -->
+            <p class="mt-3">By: <%=item.user.userName%>
+            </p>
 
 
           </div>
@@ -59,16 +57,19 @@
 
 
           <button><i
-              class="btn  fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:scale-105 transition ease-out duration-300"></i></button>
+              class="btn fa-solid fa-bookmark bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:scale-105 transition ease-out duration-300"></i></button>
           <!-- this line allows only the item creator to delete the item -->
-          <%if(item.user==user.id){ %>
-
+          <%if(item.user._id==user.id){ %>
             <form action="/item/deleteItem/<%= item.id %>?_method=DELETE" method="POST" class="col-3">
               <button
-                class="btn  fa-regular fa-trash-can bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:scale-105 transition ease-out duration-300"
+                class="btn fa-regular fa-trash-can bg-sky-500/75 shadow-lg shadow-gray-500/50 rounded p-3 px-4 m-3 text-white hover:scale-105 transition ease-out duration-300"
                 type="submit"></button>
             </form>
+
+
             <%}%>
+              <% console.log('Item user ID:', item.user); %>
+                <% console.log('Current user ID:', user.id); %>
         </div>
 
         <!-- comments -->

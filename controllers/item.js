@@ -51,7 +51,8 @@ module.exports = {
       //router.get("/:id, ensureAuth, postsController.getPost");
       //example url: http://localhost:2121/post/63dd8cb9a9ee09c2967fbe35
       //id === 63dd8cb9a9ee09c2967fbe35
-      const item = await Item.findById(req.params.id);
+      const item = await Item.findById(req.params.id).populate('user', 'userName');
+      // add .populate('user', 'userName') to the end of line 54 to render userName. It bugs out delete button
       const event = await Event.findById(req.params.id);
       const user = await User.findById(req.params.id);
 
